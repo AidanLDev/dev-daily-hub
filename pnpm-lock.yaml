@@ -25,7 +25,7 @@ importers:
         version: 3.1.6
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.13.0(@types/node@22.0.2)(typescript@5.5.4))(tailwindcss@3.4.7)
+        version: 5.1.0(astro@4.13.0(@types/node@22.0.2)(typescript@5.5.4))(tailwindcss@3.4.8)
       '@iconify-json/tabler':
         specifier: ^1.1.116
         version: 1.1.118
@@ -51,12 +51,12 @@ importers:
         specifier: ^0.33.4
         version: 0.33.4
       tailwindcss:
-        specifier: ^3.4.4
-        version: 3.4.7
+        specifier: ^3.4.8
+        version: 3.4.8
     devDependencies:
       '@tailwindcss/typography':
         specifier: ^0.5.13
-        version: 0.5.13(tailwindcss@3.4.7)
+        version: 0.5.13(tailwindcss@3.4.8)
       prettier:
         specifier: ^3.2.5
         version: 3.3.3
@@ -2328,8 +2328,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  tailwindcss@3.4.7:
-    resolution: {integrity: sha512-rxWZbe87YJb4OcSopb7up2Ba4U82BoiSGUdoDr3Ydrg9ckxFS/YWsvhN323GMcddgU65QRy7JndC7ahhInhvlQ==}
+  tailwindcss@3.4.8:
+    resolution: {integrity: sha512-GkP17r9GQkxgZ9FKHJQEnjJuKBcbFhMFzKu5slmN6NjlCuFnYJMQ8N4AZ6VrUyiRXlDtPKHkesuQ/MS913Nvdg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2766,13 +2766,13 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/tailwind@5.1.0(astro@4.13.0(@types/node@22.0.2)(typescript@5.5.4))(tailwindcss@3.4.7)':
+  '@astrojs/tailwind@5.1.0(astro@4.13.0(@types/node@22.0.2)(typescript@5.5.4))(tailwindcss@3.4.8)':
     dependencies:
       astro: 4.13.0(@types/node@22.0.2)(typescript@5.5.4)
       autoprefixer: 10.4.19(postcss@8.4.40)
       postcss: 8.4.40
       postcss-load-config: 4.0.2(postcss@8.4.40)
-      tailwindcss: 3.4.7
+      tailwindcss: 3.4.8
     transitivePeerDependencies:
       - ts-node
 
@@ -3271,13 +3271,13 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
 
-  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.7)':
+  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.8)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.7
+      tailwindcss: 3.4.8
 
   '@trysound/sax@0.2.0': {}
 
@@ -5396,7 +5396,7 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.0.1
 
-  tailwindcss@3.4.7:
+  tailwindcss@3.4.8:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
