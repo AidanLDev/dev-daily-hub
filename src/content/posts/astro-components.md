@@ -1,6 +1,6 @@
 ---
 title: You can use components inside of other components
-slug: components15
+slug: components
 description: the basic building blocks of any Astro project
 category:
   - One
@@ -63,9 +63,7 @@ const data = await fetch("SOME_SECRET_API_URL/users").then((r) => r.json());
 
 The code fence is designed to guarantee that the JavaScript that you write in it is "fenced in." It won't escape into your frontend application, or fall into your user's hands. You can safely write code here that is expensive or sensitive (like a call to your private database) without worrying about it ever ending up in your user's browser.
 
-:::tip
 You can even write TypeScript in your component script!
-:::
 
 ### The Component Template
 
@@ -185,9 +183,7 @@ The `<slot />` element is a placeholder for external HTML content, allowing you 
 
 By default, all child elements passed to a component will be rendered in its `<slot />`
 
-:::note
 Unlike _props_, which are attributes passed to an Astro component available for use throughout your component with `Astro.props`, _slots_ render child HTML elements where they are written.
-:::
 
 ```astro "<slot />"
 ---
@@ -273,13 +269,9 @@ Use a `slot="my-slot"` attribute on the child element that you want to pass thro
 
 Note that named slots must be an immediate child of the component. You cannot pass named slots through nested elements.
 
-:::tip
 Named slots can also be passed to [UI framework components](/en/core-concepts/framework-components/)!
-:::
 
-:::note
 An astro slot name can not be dynamically generated, such as within a map function. If this feature is needed within UI framework components, it might be best to generate these dynamic slots within the framework itself.
-:::
 
 ### Fallback Content for Slots
 
@@ -339,9 +331,7 @@ import BaseLayout from './BaseLayout.astro';
 </BaseLayout>
 ```
 
-:::note
 Named slots can be transferred to another component using both the `name` and `slot` attributes on a `<slot />` tag
-:::
 
 Now, the default and `head` slots passed to `HomeLayout` will be transferred to the `BaseLayout` parent
 
@@ -365,9 +355,7 @@ HTML components must contain only valid HTML, and therefore lack key Astro compo
 - Any `<script>` tags are left unbundled, treated as if they had `is:inline`.
 - They can only [reference assets that are in the `public/` folder](/en/core-concepts/project-structure/#public).
 
-:::note
 A [`<slot />` element](/en/core-concepts/astro-components/#slots) inside an HTML component will work as it would in an Astro component. In order to use the [HTML Web Component Slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) element instead, add `is:inline` to your `<slot>` element.
-:::
 
 ## Next Steps
 
