@@ -13,29 +13,31 @@ export async function getStaticPaths() {
       new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
   );
 
-  const firstPagePosts = allPosts.slice(0, 15);
-  const remainingPosts = allPosts.slice(15);
-  const totalPages = Math.ceil(remainingPosts.length / 12);
+  const postsPerPage = 12;
+  const totalPosts = allPosts.length;
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
 
   const paths = [
     {
       params: { page: "1" },
       props: {
         page: {
-          data: firstPagePosts,
+          data: allPosts.slice(0, postsPerPage),
           currentPage: 1,
-          lastPage: totalPages + 1,
+          lastPage: totalPages,
         },
       },
     },
   ];
 
   for (let i = 2; i <= totalPages; i++) {
-    const pagePosts = remainingPosts.slice((i - 2) * 12, (i - 1) * 12);
+    const start = (i - 1) * postsPerPage;
+    const end = Math.min(start + postsPerPage, totalPosts);
+    const pagePosts = allPosts.slice(start, end);
     paths.push({
       params: { page: i.toString() },
       props: {
-        page: { data: pagePosts, currentPage: i, lastPage: totalPages + 1 },
+        page: { data: pagePosts, currentPage: i, lastPage: totalPages },
       },
     });
   }
