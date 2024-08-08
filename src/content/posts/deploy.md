@@ -53,23 +53,17 @@ Some hosts will have their own command line interface (CLI) you can install glob
 
 1. Install your host's CLI globally, for example:
 
-<PackageManagerTabs>
-    <Fragment slot="npm">
-    ```shell
-    npm install --global netlify-cli
-    ```
-    </Fragment>
-    <Fragment slot="pnpm">
-    ```shell
-    pnpm add --global netlify-cli
-    ```
-    </Fragment>
-    <Fragment slot="yarn">
-    ```shell
-    yarn global add netlify-cli
-    ```
-    </Fragment>
-</PackageManagerTabs>
+   ```shell
+   npm install --global netlify-cli
+   ```
+
+   ```shell
+   pnpm add --global netlify-cli
+   ```
+
+   ```shell
+   yarn global add netlify-cli
+   ```
 
 1. Run the CLI and follow any instructions for authorization, setup etc.
 
@@ -93,23 +87,17 @@ You may also wish to build locally to preview your site, or to catch any potenti
 
 Run the command `npm run build` to build your Astro site.
 
-<PackageManagerTabs>
-      <Fragment slot="npm">
-      ```shell
-      npm run build
-      ```
-      </Fragment>
-      <Fragment slot="pnpm">
-      ```shell
-      pnpm run build
-      ```
-      </Fragment>
-      <Fragment slot="yarn">
-      ```shell
-      yarn run build
-      ```
-      </Fragment>
-  </PackageManagerTabs>
+  ```shell
+  npm run build
+  ```
+
+  ```shell
+  pnpm run build
+  ```
+
+  ```shell
+  yarn run build
+  ```
 
 By default, the build output will be placed at `dist/`. This location can be changed using the [`outDir` configuration option](/en/reference/configuration-reference/#outdir).
 
