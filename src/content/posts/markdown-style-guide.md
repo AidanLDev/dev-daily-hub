@@ -5,9 +5,8 @@ description: Here is a sample of some basic Markdown syntax that can be used whe
 category:
   - Three
 tags:
-  - Sed
+  - Markdown
   - Astro
-  - Jamstack
 pubDate: 2023-09-06
 cover: https://images.unsplash.com/photo-1526415302530-ad8c7d818689?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: AstroVerse-Markdown Style Guide
@@ -15,6 +14,8 @@ author: VV
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+
+[The source code to this post can be found here, so you can see how each mark-down element is implemented under the hood](https://github.com/AidanLDev/astroverse/blob/main/src/content/posts/markdown-style-guide.md?plain=1)
 
 ## Headings
 
@@ -210,14 +211,38 @@ Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the ses
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
 ```
 
-#### Output
+#### Links
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+External links can be written using the `[]` surrounding the text we want to act as our anchor tag and `()` after that text which will contain the link. Ensure you don't add double quotes to the external link, otherwise Astro will treat it was an internal link.
 
-H<sub>2</sub>O
+So the below links:
 
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+- [Here is a link to my portfolio](https://aidanlowson.com)
+- [A link to my freeqrgen project](https://freeqrgen.net/)
+- [Google](https://google.com)
 
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
+```markdown
+- [Here is a link to my portfolio](https://aidanlowson.com)
+- [A link to my freeqrgen project](https://freeqrgen.net/)
+- [Google](https://google.com)
+```
 
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+These links will open up in the current window. To open them in a new tab we'll have to use HTML so we can use an anchor tag with the target attribute set to "_blank".
+
+<div class="flex flex-col gap-4">
+  <a href="https://aidanlowson.com" target="_blank">Here is a link to my portfolio</a>
+  <a href="https://freeqrgen.net/" target="_blank">A link to my freeqrgen project</a>
+  <a href="https://google.com" target="_blank">Google</a>
+</div>
+
+```html
+<div class="flex flex-col gap-4">
+  <a href="https://aidanlowson.com" target="_blank"
+    >Here is a link to my portfolio</a
+  >
+  <a href="https://freeqrgen.net/" target="_blank"
+    >A link to my freeqrgen project</a
+  >
+  <a href="https://google.com" target="_blank">Google</a>
+</div>
+```

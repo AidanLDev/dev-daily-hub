@@ -5,16 +5,14 @@ description: Content collections help organize your Markdown and type-check your
 category:
   - Two
 tags:
-  - Tailwind
   - Astro
-  - Jamstack
 pubDate: 2023-09-02
 cover: https://images.unsplash.com/photo-1527607976958-7cbb4a6d0131?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: AstroVerse-Content Collections
 author: VV
 ---
 
-c is a perfect choice for your content-focused site: blogs, marketing sites, portfolios, and more!
+Astro is a perfect choice for your content-focused site: blogs, marketing sites, portfolios, and more!
 
 Astro helps you author and present your content. You can write a blog post directly in Astro using Markdown/MDX, or fetch your content from a headless CMS. Astro lets you build a site around your content: you can add a layout to your pages, create an index of posts, and set up an RSS feed to allow readers to subscribe.
 
