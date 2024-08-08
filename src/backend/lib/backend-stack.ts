@@ -18,7 +18,7 @@ export class BackendStack extends cdk.Stack {
     // The code that defines your stack goes here
     // Create an S3 bucket to store Astro build artifacts
     const bucket = new s3.Bucket(this, "AstroBucket", {
-      bucketName: "dev-daily-hub-static-files-Aidan-01Lowson",
+      bucketName: "dev-daily-hub-static-files-aidan-lowson",
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
 
