@@ -9,7 +9,7 @@ tags:
   - Hosting
 author: A
 category:
-  - One
+  - WebDev
 ---
 
 # Hosting a website for free using Netlify

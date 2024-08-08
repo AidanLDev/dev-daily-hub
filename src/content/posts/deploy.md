@@ -4,11 +4,11 @@ slug: deploy-your-astro
 description: How to deploy your Astro site to the web.
 i18nReady: true
 category:
-  - Two
+  - WebDev
 tags:
-  - Tailwind
+  - CI CD
   - Astro
-  - Jamstack
+  - Hosting
 pubDate: 2023-09-01
 cover: https://images.unsplash.com/photo-1629679264906-544009632b08?q=80&w=1960&h=1102&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 coverAlt: AstroVerse-Aliases
@@ -87,17 +87,17 @@ You may also wish to build locally to preview your site, or to catch any potenti
 
 Run the command `npm run build` to build your Astro site.
 
-  ```shell
-  npm run build
-  ```
+```shell
+npm run build
+```
 
-  ```shell
-  pnpm run build
-  ```
+```shell
+pnpm run build
+```
 
-  ```shell
-  yarn run build
-  ```
+```shell
+yarn run build
+```
 
 By default, the build output will be placed at `dist/`. This location can be changed using the [`outDir` configuration option](/en/reference/configuration-reference/#outdir).
 

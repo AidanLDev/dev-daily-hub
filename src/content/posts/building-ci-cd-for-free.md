@@ -3,7 +3,7 @@ title: Setting up CI/CD for free
 slug: building-ci-cd-for-free
 description: Setting up CI/CD for free
 category:
-  - One
+  - WebDev
 tags:
   - CI CD
   - DevOps

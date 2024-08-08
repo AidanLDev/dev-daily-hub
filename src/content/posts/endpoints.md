@@ -3,7 +3,7 @@ title: Endpoint
 slug: endpoint
 description: Learn how to create endpoints that serve any kind of data
 category:
-  - There
+  - WebDev
 tags:
   - Astro
 pubDate: 2023-09-01

@@ -3,11 +3,9 @@ title: You can use components inside of other components
 slug: components
 description: the basic building blocks of any Astro project
 category:
-  - One
+  - WebDev
 tags:
-  - Tailwind
   - Astro
-  - Jamstack
 pubDate: 2023-09-01
 cover: https://images.unsplash.com/photo-1511140973288-19bf21d7e771?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: AstroVerse-Aliases
@@ -322,9 +320,7 @@ Slots can be transferred to other components. For example, when creating nested 
 ```
 
 ```astro {6,7}
-// src/layouts/HomeLayout.astro
-
-import BaseLayout from './BaseLayout.astro';
+// src/layouts/HomeLayout.astro import BaseLayout from './BaseLayout.astro';
 <BaseLayout>
   <slot name="head" slot="head" />
   <slot />
@@ -336,9 +332,7 @@ Named slots can be transferred to another component using both the `name` and `s
 Now, the default and `head` slots passed to `HomeLayout` will be transferred to the `BaseLayout` parent
 
 ```astro
-// src/pages/index.astro
-
-import HomeLayout from '../layouts/HomeLayout.astro';
+// src/pages/index.astro import HomeLayout from '../layouts/HomeLayout.astro';
 <HomeLayout>
   <title slot="head">Astro</title>
   <h1>Astro</h1>

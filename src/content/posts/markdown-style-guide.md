@@ -3,7 +3,7 @@ title: Markdown Style Guide
 slug: markdown-style-guide
 description: Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
 category:
-  - Three
+  - WebDev
 tags:
   - Markdown
   - Astro
@@ -227,7 +227,7 @@ So the below links:
 - [Google](https://google.com)
 ```
 
-These links will open up in the current window. To open them in a new tab we'll have to use HTML so we can use an anchor tag with the target attribute set to "_blank".
+These links will open up in the current window. To open them in a new tab we'll have to use HTML so we can use an anchor tag with the target attribute set to "\_blank".
 
 <div class="flex flex-col gap-4">
   <a href="https://aidanlowson.com" target="_blank">Here is a link to my portfolio</a>

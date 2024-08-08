@@ -3,11 +3,10 @@ title: Tailwind typography
 slug: tailwind-typography
 description: The @tailwindcss/typography plugin is our attempt to give you what you actually want, without any of the downsides of doing something stupid like disabling our base styles.
 category:
-  - One
+  - WebDev
 tags:
   - Tailwind
   - Astro
-  - Jamstack
 pubDate: 2023-09-08
 cover: https://images.unsplash.com/photo-1506794778225-cbf6c8df4c5c?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: AstroVerse-tailwind-typography

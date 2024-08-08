@@ -3,7 +3,7 @@ title: Getting Started With Astro
 slug: getting-started-with-astro
 description: A basic intro to Astro.
 category:
-  - One
+  - WebDev
 tags:
   - Astro
 pubDate: 2023-09-06

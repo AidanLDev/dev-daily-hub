@@ -3,18 +3,16 @@ title: Contribute to Astro
 slug: contribute-to-astro
 description: How to get involved and contribute to Astro.
 category:
-  - Three
+  - WebDev
 tags:
-  - Tailwind
   - Astro
-  - Jamstack
 pubDate: 2023-09-03
 cover: https://images.unsplash.com/photo-1560251085-d9c1dc542960?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: AstroVerse-Authoring Content
 author: VV
 ---
 
-We welcome contributions of any size and contributors of any skill level. As an open-source project, we believe in giving back to our contributors. We are happy to help with guidance on PRs, technical writing, and turning any feature idea into a reality.
+Astro welcomes contributions of any size and contributors of any skill level. As an open-source project, we believe in giving back to our contributors. We are happy to help with guidance on PRs, technical writing, and turning any feature idea into a reality.
 
 Want to get even more involved? See our [Governance doc](https://github.com/withastro/.github/blob/main/GOVERNANCE.md) for detailed descriptions of different roles, maintainer nomination processes, code review processes, and Code of Conduct enforcement.
 
