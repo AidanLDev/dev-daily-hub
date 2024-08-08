@@ -6,14 +6,15 @@ import partytown from "@astrojs/partytown";
 import pagefind from "astro-pagefind";
 import icon from "astro-icon";
 import tailwind from "@astrojs/tailwind";
+import aws from "astro-sst";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://verse-astro.vercel.app/",
-  trailingSlash: "always",
+  site: "https://devdailyhub.com",
+  trailingSlash: "never",
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: 'viewport',
+    defaultStrategy: "viewport",
   },
 
   experimental: {
@@ -51,6 +52,7 @@ export default defineConfig({
         tabler: ["*"],
       },
     }),
-    
   ],
+  output: "hybrid",
+  adapter: aws(),
 });
