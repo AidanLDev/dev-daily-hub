@@ -3,7 +3,7 @@ title: Why choose Astro over another web framework
 slug: why-astro
 description: Astro is an all-in-one web framework for building fast, content-focused websites. Learn more.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-09

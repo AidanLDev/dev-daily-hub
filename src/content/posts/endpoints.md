@@ -3,7 +3,7 @@ title: Endpoint
 slug: endpoint
 description: Learn how to create endpoints that serve any kind of data
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-01
@@ -28,10 +28,10 @@ Endpoints export a `GET` function (optionally `async`) that receives a [context 
 export async function GET({ params, request }) {
   return new Response(
     JSON.stringify({
-      name: "Astro",
-      url: "https://astro.build/",
+      name: 'Astro',
+      url: 'https://astro.build/',
     }),
-  );
+  )
 }
 ```
 
@@ -40,9 +40,9 @@ Since Astro v3.0, the returned `Response` object doesn't have to include the `en
 ```ts title="src/pages/astro-logo.png.ts" {3}
 export async function GET({ params, request }) {
   const response = await fetch(
-    "https://docs.astro.build/assets/full-logo-light.png",
-  );
-  return new Response(await response.arrayBuffer());
+    'https://docs.astro.build/assets/full-logo-light.png',
+  )
+  return new Response(await response.arrayBuffer())
 }
 ```
 
@@ -59,26 +59,26 @@ export const GET: APIRoute = async ({ params, request }) => {...}
 Endpoints support the same [dynamic routing](/en/core-concepts/routing/#dynamic-routes) features that pages do. Name your file with a bracketed parameter name and export a [`getStaticPaths()` function](/en/reference/api-reference/#getstaticpaths). Then, you can access the parameter using the `params` property passed to the endpoint function:
 
 ```ts title="src/pages/api/[id].json.ts"
-import type { APIRoute } from "astro";
+import type { APIRoute } from 'astro'
 
-const usernames = ["Sarah", "Chris", "Yan", "Elian"];
+const usernames = ['Sarah', 'Chris', 'Yan', 'Elian']
 
 export const GET: APIRoute = ({ params, request }) => {
-  const id = params.id;
+  const id = params.id
   return new Response(
     JSON.stringify({
       name: usernames[id],
     }),
-  );
-};
+  )
+}
 
 export function getStaticPaths() {
   return [
-    { params: { id: "0" } },
-    { params: { id: "1" } },
-    { params: { id: "2" } },
-    { params: { id: "3" } },
-  ];
+    { params: { id: '0' } },
+    { params: { id: '1' } },
+    { params: { id: '2' } },
+    { params: { id: '3' } },
+  ]
 }
 ```
 
@@ -89,15 +89,15 @@ This will generate four JSON endpoints at build time: `/api/0.json`, `/api/1.jso
 All endpoints receive a `request` property, but in static mode, you only have access to `request.url`. This returns the full URL of the current endpoint and works the same as [Astro.request.url](/en/reference/api-reference/#astrorequest) does for pages.
 
 ```ts title="src/pages/request-path.json.ts"
-import type { APIRoute } from "astro";
+import type { APIRoute } from 'astro'
 
 export const GET: APIRoute = ({ params, request }) => {
   return new Response(
     JSON.stringify({
       path: new URL(request.url).pathname,
     }),
-  );
-};
+  )
+}
 ```
 
 ## Server Endpoints (API Routes)
@@ -115,25 +115,25 @@ Be sure to [enable SSR](/en/guides/server-side-rendering/) before trying these e
 Server endpoints can access `params` without exporting `getStaticPaths`, and they can return a [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response) object, allowing you to set status codes and headers:
 
 ```js title="src/pages/[id].json.js"
-import { getProduct } from "../db";
+import { getProduct } from '../db'
 
 export async function GET({ params }) {
-  const id = params.id;
-  const product = await getProduct(id);
+  const id = params.id
+  const product = await getProduct(id)
 
   if (!product) {
     return new Response(null, {
       status: 404,
-      statusText: "Not found",
-    });
+      statusText: 'Not found',
+    })
   }
 
   return new Response(JSON.stringify(product), {
     status: 200,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
-  });
+  })
 }
 ```
 
@@ -144,12 +144,12 @@ In SSR mode, certain providers require the `Content-Type` header to return an im
 ```ts title="src/pages/astro-logo.png.ts"
 export async function GET({ params, request }) {
   const response = await fetch(
-    "https://docs.astro.build/assets/full-logo-light.png",
-  );
-  const buffer = Buffer.from(await response.arrayBuffer());
+    'https://docs.astro.build/assets/full-logo-light.png',
+  )
+  const buffer = Buffer.from(await response.arrayBuffer())
   return new Response(buffer, {
-    headers: { "Content-Type": "image/png" },
-  });
+    headers: { 'Content-Type': 'image/png' },
+  })
 }
 ```
 
@@ -163,34 +163,34 @@ You can also export an `ALL` function to match any method that doesn't have a co
 export const GET: APIRoute = ({ params, request }) => {
   return new Response(
     JSON.stringify({
-      message: "This was a GET!",
+      message: 'This was a GET!',
     }),
-  );
-};
+  )
+}
 
 export const POST: APIRoute = ({ request }) => {
   return new Response(
     JSON.stringify({
-      message: "This was a POST!",
+      message: 'This was a POST!',
     }),
-  );
-};
+  )
+}
 
 export const DELETE: APIRoute = ({ request }) => {
   return new Response(
     JSON.stringify({
-      message: "This was a DELETE!",
+      message: 'This was a DELETE!',
     }),
-  );
-};
+  )
+}
 
 export const ALL: APIRoute = ({ request }) => {
   return new Response(
     JSON.stringify({
       message: `This was a ${request.method}!`,
     }),
-  );
-};
+  )
+}
 ```
 
 <RecipeLinks slugs={["en/recipes/captcha", "en/recipes/build-forms-api" ]}/>
@@ -201,20 +201,20 @@ In SSR mode, the `request` property returns a fully usable [`Request`](https://d
 
 ```ts title="src/pages/test-post.json.ts"
 export const POST: APIRoute = async ({ request }) => {
-  if (request.headers.get("Content-Type") === "application/json") {
-    const body = await request.json();
-    const name = body.name;
+  if (request.headers.get('Content-Type') === 'application/json') {
+    const body = await request.json()
+    const name = body.name
     return new Response(
       JSON.stringify({
-        message: "Your name was: " + name,
+        message: 'Your name was: ' + name,
       }),
       {
         status: 200,
       },
-    );
+    )
   }
-  return new Response(null, { status: 400 });
-};
+  return new Response(null, { status: 400 })
+}
 ```
 
 ### Redirects
@@ -222,19 +222,19 @@ export const POST: APIRoute = async ({ request }) => {
 The endpoint context exports a `redirect()` utility similar to `Astro.redirect`:
 
 ```js title="src/pages/links/[id].js" {14}
-import { getLinkUrl } from "../db";
+import { getLinkUrl } from '../db'
 
 export async function GET({ params, redirect }) {
-  const { id } = params;
-  const link = await getLinkUrl(id);
+  const { id } = params
+  const link = await getLinkUrl(id)
 
   if (!link) {
     return new Response(null, {
       status: 404,
-      statusText: "Not found",
-    });
+      statusText: 'Not found',
+    })
   }
 
-  return redirect(link, 307);
+  return redirect(link, 307)
 }
 ```

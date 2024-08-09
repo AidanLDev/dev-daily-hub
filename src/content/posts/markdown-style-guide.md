@@ -3,7 +3,7 @@ title: Markdown Style Guide
 slug: markdown-style-guide
 description: Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Markdown
   - Astro
@@ -231,7 +231,7 @@ These links will open up in the current window. To open them in a new tab we'll 
 
 <div class="flex flex-col gap-4">
   <a href="https://aidanlowson.com" target="_blank">Here is a link to my portfolio</a>
-  <a href="https://freeqrgen.net/" target="_blank">A link to my freeqrgen project</a>
+  <a href="https://freeqrgen.net" target="_blank">A link to my freeqrgen project</a>
   <a href="https://google.com" target="_blank">Google</a>
 </div>
 
@@ -240,7 +240,7 @@ These links will open up in the current window. To open them in a new tab we'll 
   <a href="https://aidanlowson.com" target="_blank"
     >Here is a link to my portfolio</a
   >
-  <a href="https://freeqrgen.net/" target="_blank"
+  <a href="https://freeqrgen.net" target="_blank"
     >A link to my freeqrgen project</a
   >
   <a href="https://google.com" target="_blank">Google</a>

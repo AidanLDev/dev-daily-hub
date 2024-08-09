@@ -3,7 +3,7 @@ title: Rendering Modes
 slug: rendering-modes
 description: Rendering Modes
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-01

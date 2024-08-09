@@ -3,7 +3,7 @@ title: LeetCode 1. Two Sums
 slug: leetcode-1-two-sums
 description: A TypeScript solution to the Two Sums problem, an efficient algorithm using a hashmap that runs in O(N) time.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - DSA
   - TS

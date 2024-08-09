@@ -3,7 +3,7 @@ title: Contribute to Astro
 slug: contribute-to-astro
 description: How to get involved and contribute to Astro.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-03

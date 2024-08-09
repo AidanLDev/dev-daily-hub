@@ -3,7 +3,7 @@ title: Use a CMS with Astro
 slug: use-cms
 description: How to use a CMS to add content to Astro
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-01

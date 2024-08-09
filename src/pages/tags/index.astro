@@ -25,7 +25,7 @@ const tags = Object.keys(tagCounts);
       {
         tags.map((tag) => (
           <a
-            href={`/tags/${tag}/1/`}
+            href={`/tags/${tag}/1`}
             class="rounded-full bg-neutral-200 px-3 py-2 text-center text-sm font-semibold no-underline hover:bg-neutral-300"
           >
             {tag} <span>({tagCounts[tag]})</span>

@@ -3,7 +3,7 @@ title: Content Collections
 slug: content-collections
 description: Content collections help organize your Markdown and type-check your frontmatter with schemas.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-02

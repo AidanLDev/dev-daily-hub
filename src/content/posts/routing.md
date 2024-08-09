@@ -3,7 +3,7 @@ title: Routing
 slug: routing
 description: An intro to routing with Astro.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-01
@@ -19,7 +19,7 @@ Astro uses **file-based routing** to generate your build URLs based on the file 
 Astro uses standard HTML [`<a>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) to navigate between routes. There is no framework-specific `<Link>` component provided.
 
 ```astro title="src/pages/index.astro"
-<p>Read more <a href="/about/">about</a> Astro!</p>
+<p>Read more <a href="/about">about</a> Astro!</p>
 ```
 
 ## Static routes
@@ -55,13 +55,13 @@ Because all routes must be determined at build time, a dynamic route must export
 ---
 export function getStaticPaths() {
   return [
-    { params: { dog: "clifford" } },
-    { params: { dog: "rover" } },
-    { params: { dog: "spot" } },
-  ];
+    { params: { dog: 'clifford' } },
+    { params: { dog: 'rover' } },
+    { params: { dog: 'spot' } },
+  ]
 }
 
-const { dog } = Astro.params;
+const { dog } = Astro.params
 ---
 
 <div>Good dog, {dog}!</div>
@@ -75,12 +75,12 @@ The filename can include multiple parameters, which must all be included in the 
 ---
 export function getStaticPaths() {
   return [
-    { params: { lang: "en", version: "v1" } },
-    { params: { lang: "fr", version: "v2" } },
-  ];
+    { params: { lang: 'en', version: 'v1' } },
+    { params: { lang: 'fr', version: 'v2' } },
+  ]
 }
 
-const { lang, version } = Astro.params;
+const { lang, version } = Astro.params
 ---
 
 ...
@@ -102,13 +102,13 @@ If you need more flexibility in your URL routing, you can use a [rest parameter]
 ---
 export function getStaticPaths() {
   return [
-    { params: { path: "one/two/three" } },
-    { params: { path: "four" } },
+    { params: { path: 'one/two/three' } },
+    { params: { path: 'four' } },
     { params: { path: undefined } },
-  ];
+  ]
 }
 
-const { path } = Astro.params;
+const { path } = Astro.params
 ---
 
 ...
@@ -143,29 +143,29 @@ export async function getStaticPaths() {
   const pages = [
     {
       slug: undefined,
-      title: "Astro Store",
-      text: "Welcome to the Astro store!",
+      title: 'Astro Store',
+      text: 'Welcome to the Astro store!',
     },
     {
-      slug: "products",
-      title: "Astro products",
-      text: "We have lots of products for you",
+      slug: 'products',
+      title: 'Astro products',
+      text: 'We have lots of products for you',
     },
     {
-      slug: "products/astro-handbook",
-      title: "The ultimate Astro handbook",
-      text: "If you want to learn Astro, you must read this book.",
+      slug: 'products/astro-handbook',
+      title: 'The ultimate Astro handbook',
+      text: 'If you want to learn Astro, you must read this book.',
     },
-  ];
+  ]
   return pages.map(({ slug, title, text }) => {
     return {
       params: { slug },
       props: { title, text },
-    };
-  });
+    }
+  })
 }
 
-const { title, text } = Astro.props;
+const { title, text } = Astro.props
 ---
 
 <html>
@@ -185,7 +185,7 @@ In [SSR mode](/en/guides/server-side-rendering/), dynamic routes are defined the
 
 ```astro title="src/pages/resources/[resource]/[id].astro"
 ---
-const { resource, id } = Astro.params;
+const { resource, id } = Astro.params
 ---
 
 <h1>{resource}: {id}</h1>
@@ -202,25 +202,25 @@ Because SSR pages can't use `getStaticPaths()`, they can't receive props. The [p
 const pages = [
   {
     slug: undefined,
-    title: "Astro Store",
-    text: "Welcome to the Astro store!",
+    title: 'Astro Store',
+    text: 'Welcome to the Astro store!',
   },
   {
-    slug: "products",
-    title: "Astro products",
-    text: "We have lots of products for you",
+    slug: 'products',
+    title: 'Astro products',
+    text: 'We have lots of products for you',
   },
   {
-    slug: "products/astro-handbook",
-    title: "The ultimate Astro handbook",
-    text: "If you want to learn Astro, you must read this book.",
+    slug: 'products/astro-handbook',
+    title: 'The ultimate Astro handbook',
+    text: 'If you want to learn Astro, you must read this book.',
   },
-];
+]
 
-const { slug } = Astro.params;
-const page = pages.find((page) => page.slug === slug);
-if (!page) return Astro.redirect("/404");
-const { title, text } = page;
+const { slug } = Astro.params
+const page = pages.find((page) => page.slug === slug)
+if (!page) return Astro.redirect('/404')
+const { title, text } = page
 ---
 
 <html>
@@ -247,13 +247,13 @@ You can define rules to [redirect users to permanently-moved pages](#configured-
 You can specify a mapping of permanent redirects in your Astro config with the `redirects` value. For most redirects, this is a mapping of an old route to the new route:
 
 ```js title="astro.config.mjs" {4-6}
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config'
 
 export default defineConfig({
   redirects: {
-    "/old-page": "/new-page",
+    '/old-page': '/new-page',
   },
-});
+})
 ```
 
 These redirects follow the same rules as file-based routes. Dynamic routes are allowed as long as both the new and old routes contain the same parameters, for example:
@@ -267,16 +267,16 @@ These redirects follow the same rules as file-based routes. Dynamic routes are a
 Using SSR or a static adapter, you can also provide an object as the value, allowing you to specify the `status` code in addition to the new `destination`:
 
 ```js title="astro.config.mjs" {5-8}
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config'
 
 export default defineConfig({
   redirects: {
-    "/old-page": {
+    '/old-page': {
       status: 302,
-      destination: "/new-page",
+      destination: '/new-page',
     },
   },
-});
+})
 ```
 
 When running `astro build`, Astro will output HTML files with the [meta refresh](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#examples) tag by default. Supported adapters will instead write out the host's configuration file with the redirects.
@@ -289,13 +289,13 @@ On the `Astro` global, the `Astro.redirect` method allows you to redirect to ano
 
 ```astro title="src/pages/account.astro" {8}
 ---
-import { isLoggedIn } from "../utils";
+import { isLoggedIn } from '../utils'
 
-const cookie = Astro.request.headers.get("cookie");
+const cookie = Astro.request.headers.get('cookie')
 
 // If the user is not logged in, redirect them to the login page
 if (!isLoggedIn(cookie)) {
-  return Astro.redirect("/login");
+  return Astro.redirect('/login')
 }
 ---
 
@@ -347,23 +347,23 @@ You can use the `paginate()` function to generate these pages for an array of va
 export async function getStaticPaths({ paginate }) {
   const astronautPages = [
     {
-      astronaut: "Neil Armstrong",
+      astronaut: 'Neil Armstrong',
     },
     {
-      astronaut: "Buzz Aldrin",
+      astronaut: 'Buzz Aldrin',
     },
     {
-      astronaut: "Sally Ride",
+      astronaut: 'Sally Ride',
     },
     {
-      astronaut: "John Glenn",
+      astronaut: 'John Glenn',
     },
-  ];
+  ]
   // Generate pages from our array of astronauts, with 2 to a page
-  return paginate(astronautPages, { pageSize: 2 });
+  return paginate(astronautPages, { pageSize: 2 })
 }
 // All paginated data is passed on the "page" prop
-const { page } = Astro.props;
+const { page } = Astro.props
 ---
 
 <!--Display the current page number. Astro.params.page can also be used!-->
@@ -394,7 +394,7 @@ When you use the `paginate()` function, each page will be passed its data via a 
 export async function getStaticPaths({ paginate }) {
   /* ... */
 }
-const { page } = Astro.props;
+const { page } = Astro.props
 ---
 
 <h1>Page {page.currentPage}</h1>
@@ -410,28 +410,28 @@ const { page } = Astro.props;
 ```ts
 interface Page<T = any> {
   /** result */
-  data: T[];
+  data: T[]
   /** metadata */
   /** the count of the first item on the page, starting from 0 */
-  start: number;
+  start: number
   /** the count of the last item on the page, starting from 0 */
-  end: number;
+  end: number
   /** total number of results */
-  total: number;
+  total: number
   /** the current page number, starting from 1 */
-  currentPage: number;
+  currentPage: number
   /** number of items per page (default: 25) */
-  size: number;
+  size: number
   /** number of last page */
-  lastPage: number;
+  lastPage: number
   url: {
     /** url of the current page */
-    current: string;
+    current: string
     /** url of the previous page (if there is one) */
-    prev: string | undefined;
+    prev: string | undefined
     /** url of the next page (if there is one) */
-    next: string | undefined;
-  };
+    next: string | undefined
+  }
 }
 ```
 
@@ -454,23 +454,23 @@ In the following example, we will implement nested pagination to build the URLs 
 ---
 // src/pages/[tag]/[page].astro
 export async function getStaticPaths({ paginate }) {
-  const allTags = ["red", "blue", "green"];
-  const allPosts = await Astro.glob("../../posts/*.md");
+  const allTags = ['red', 'blue', 'green']
+  const allPosts = await Astro.glob('../../posts/*.md')
   // For every tag, return a paginate() result.
   // Make sure that you pass `{params: {tag}}` to `paginate()`
   // so that Astro knows which tag grouping the result is for.
   return allTags.flatMap((tag) => {
     const filteredPosts = allPosts.filter(
       (post) => post.frontmatter.tag === tag,
-    );
+    )
     return paginate(filteredPosts, {
       params: { tag },
       pageSize: 10,
-    });
-  });
+    })
+  })
 }
-const { page } = Astro.props;
-const params = Astro.params;
+const { page } = Astro.props
+const params = Astro.params
 ---
 ```
 

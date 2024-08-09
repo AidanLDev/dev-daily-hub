@@ -3,7 +3,7 @@ title: Astro Syntax
 slug: astro-syntax
 description: An intro to the .astro component syntax.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-01
@@ -32,7 +32,7 @@ Local variables can be added into the HTML using the curly braces syntax:
 
 ```astro title="src/components/Variables.astro" "{name}"
 ---
-const name = "Astro";
+const name = 'Astro'
 ---
 
 <div>
@@ -47,7 +47,7 @@ Local variables can be used in curly braces to pass attribute values to both HTM
 
 ```astro title="src/components/DynamicAttributes.astro" "{name}" "${name}"
 ---
-const name = "Astro";
+const name = 'Astro'
 ---
 
 <h1 class={name}>Attribute expressions are supported</h1>
@@ -62,7 +62,7 @@ For example, you can't assign an event handler to an HTML element in an Astro co
 ```astro title="dont-do-this.astro"
 ---
 function handleClick() {
-  console.log("button clicked!");
+  console.log('button clicked!')
 }
 ---
 
@@ -80,9 +80,9 @@ Instead, use a client-side script to add the event handler, like you would in va
 <button id="button">Click Me</button>
 <script>
   function handleClick() {
-    console.log("button clicked!");
+    console.log('button clicked!')
   }
-  document.getElementById("button").addEventListener("click", handleClick);
+  document.getElementById('button').addEventListener('click', handleClick)
 </script>
 ```
 
@@ -94,7 +94,7 @@ Local variables can be used in JSX-like functions to produce dynamically-generat
 
 ```astro title="src/components/DynamicHtml.astro" "{item}"
 ---
-const items = ["Dog", "Cat", "Platypus"];
+const items = ['Dog', 'Cat', 'Platypus']
 ---
 
 <ul>
@@ -106,7 +106,7 @@ Astro can conditionally display HTML using JSX logical operators and ternary exp
 
 ```astro title="src/components/ConditionalHtml.astro" "visible"
 ---
-const visible = true;
+const visible = true
 ---
 
 {visible && <p>Show me!</p>}
@@ -120,9 +120,9 @@ You can also use dynamic tags by setting a variable to an HTML tag name or a com
 
 ```astro title="src/components/DynamicTags.astro" /Element|(?<!My)Component/
 ---
-import MyComponent from "./MyComponent.astro";
-const Element = "div";
-const Component = MyComponent;
+import MyComponent from './MyComponent.astro'
+const Element = 'div'
+const Component = MyComponent
 ---
 
 <Element>Hello!</Element>
@@ -145,7 +145,7 @@ Fragments can be useful to avoid wrapper elements when adding [`set:*` directive
 
 ```astro title="src/components/SetHtml.astro" "Fragment"
 ---
-const htmlString = "<p>Raw HTML content</p>";
+const htmlString = '<p>Raw HTML content</p>'
 ---
 
 <Fragment set:html={htmlString} />

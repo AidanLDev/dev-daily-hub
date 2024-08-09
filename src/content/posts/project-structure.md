@@ -3,7 +3,7 @@ title: Project Structure
 slug: project-structure
 description: Learn how to structure a project with Astro.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-01

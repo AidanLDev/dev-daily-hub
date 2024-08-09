@@ -3,7 +3,7 @@ title: Astro Islands
 slug: astro-islands
 description: Astro Islands (aka Component Islands) are a pattern of web architecture pioneered by Astro. “Islands architecture” was first coined by Etsy's frontend architect Katie Sylor-Miller in 2019, and expanded on by Preact creator Jason Miller.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-06

@@ -4,7 +4,7 @@ slug: deploy-your-astro
 description: How to deploy your Astro site to the web.
 i18nReady: true
 category:
-  - WebDev
+  - DevOps
 tags:
   - CI CD
   - Astro

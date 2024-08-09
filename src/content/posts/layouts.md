@@ -3,7 +3,7 @@ title: Layouts
 slug: layouts
 description: An intro to layouts, a type of Astro component that is shared between pages for common layouts.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-01
@@ -28,9 +28,9 @@ Layout components are commonly placed in a `src/layouts` directory in your proje
 ```astro "<slot />"
 ---
 // src/layouts/MySiteLayout.astro
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-const { title } = Astro.props;
+import BaseHead from '../components/BaseHead.astro'
+import Footer from '../components/Footer.astro'
+const { title } = Astro.props
 ---
 
 <html lang="en">
@@ -57,7 +57,7 @@ const { title } = Astro.props;
 
 ```astro title="src/pages/index.astro"
 ---
-import MySiteLayout from "../layouts/MySiteLayout.astro";
+import MySiteLayout from '../layouts/MySiteLayout.astro'
 ---
 
 <MySiteLayout title="Home Page">
@@ -76,9 +76,9 @@ Astro provides a special `layout` frontmatter property to specify which `.astro`
 ```markdown title="src/pages/page.md" {2}
 ---
 layout: ../layouts/BaseLayout.astro
-title: "Hello, World!"
-author: "Matthew Phillips"
-date: "09 Aug 2022"
+title: 'Hello, World!'
+author: 'Matthew Phillips'
+date: '09 Aug 2022'
 ---
 
 All frontmatter properties are available as props to an Astro layout component.
@@ -97,7 +97,7 @@ A typical layout for Markdown or MDX pages includes:
 ---
 // src/layouts/BaseLayout.astro
 // 1. The frontmatter prop gives access to frontmatter and other data
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
 ---
 
 <html>
@@ -119,18 +119,18 @@ You can set a layout’s [`Props` type](/en/guides/typescript/#component-props) 
 
 ```astro title="src/layouts/BaseLayout.astro" ins={2,4-9}
 ---
-import type { MarkdownLayoutProps } from "astro";
+import type { MarkdownLayoutProps } from 'astro'
 
 type Props = MarkdownLayoutProps<{
   // Define frontmatter props here
-  title: string;
-  author: string;
-  date: string;
-}>;
+  title: string
+  author: string
+  date: string
+}>
 
 // Now, `frontmatter`, `url`, and other Markdown layout properties
 // are accessible with type safety
-const { frontmatter, url } = Astro.props;
+const { frontmatter, url } = Astro.props
 ---
 
 <html>
@@ -163,38 +163,38 @@ An example Markdown blog post may pass the following `Astro.props` object to its
 
 ```js
 Astro.props = {
-  file: "/home/user/projects/.../file.md",
-  url: "/en/guides/markdown-content/",
+  file: '/home/user/projects/.../file.md',
+  url: '/en/guides/markdown-content/',
   frontmatter: {
     /** Frontmatter from a blog post */
-    title: "Astro 0.18 Release",
-    date: "Tuesday, July 27 2021",
-    author: "Matthew Phillips",
-    description: "Astro 0.18 is our biggest release since Astro launch.",
+    title: 'Astro 0.18 Release',
+    date: 'Tuesday, July 27 2021',
+    author: 'Matthew Phillips',
+    description: 'Astro 0.18 is our biggest release since Astro launch.',
     /** Generated values */
-    file: "/home/user/projects/.../file.md",
-    url: "/en/guides/markdown-content/",
+    file: '/home/user/projects/.../file.md',
+    url: '/en/guides/markdown-content/',
   },
   headings: [
     {
       depth: 1,
-      text: "Astro 0.18 Release",
-      slug: "astro-018-release",
+      text: 'Astro 0.18 Release',
+      slug: 'astro-018-release',
     },
     {
       depth: 2,
-      text: "Responsive partial hydration",
-      slug: "responsive-partial-hydration",
+      text: 'Responsive partial hydration',
+      slug: 'responsive-partial-hydration',
     },
     /* ... */
   ],
 
   /** Available in Markdown only */
   rawContent: () =>
-    "# Astro 0.18 Release\nA little over a month ago, the first public beta [...]",
+    '# Astro 0.18 Release\nA little over a month ago, the first public beta [...]',
   compiledContent: () =>
-    "<h1>Astro 0.18 Release</h1>\n<p>A little over a month ago, the first public beta [...]</p>",
-};
+    '<h1>Astro 0.18 Release</h1>\n<p>A little over a month ago, the first public beta [...]</p>',
+}
 ```
 
 :::note
@@ -214,11 +214,11 @@ You may need to pass information to your MDX layout that does not (or cannot) ex
 ```mdx title="src/pages/posts/first-post.mdx" ins={6} del={2} /</?BaseLayout>/ /</?BaseLayout title={frontmatter.title} fancyJsHelper={fancyJsHelper}>/
 ---
 layout: ../../layouts/BaseLayout.astro
-title: "My first MDX post"
-publishDate: "21 September 2022"
+title: 'My first MDX post'
+publishDate: '21 September 2022'
 ---
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro'
 
 function fancyJsHelper() {
 return "Try doing that with YAML!";
@@ -234,7 +234,7 @@ Then, your values are available to you through `Astro.props` in your layout, and
 ```astro /{?title}?/ "fancyJsHelper" "{fancyJsHelper()}"
 ---
 // src/layouts/BaseLayout.astro
-const { title, fancyJsHelper } = Astro.props;
+const { title, fancyJsHelper } = Astro.props
 ---
 
 <!-- -->
@@ -256,7 +256,7 @@ In the example below, the layout will display the page title either from a front
 ```astro /{?title}?/ /Astro.props[.a-z]*/
 ---
 // src/components/MyLayout.astro
-const { title } = Astro.props.frontmatter || Astro.props;
+const { title } = Astro.props.frontmatter || Astro.props
 ---
 
 <html>
@@ -277,8 +277,8 @@ For example, a `BlogPostLayout.astro` layout component could style a post's titl
 ```astro {3} /</?BaseLayout>/ /</?BaseLayout url={frontmatter.url}>/
 ---
 // src/layouts/BlogPostLayout.astro
-import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
+import BaseLayout from './BaseLayout.astro'
+const { frontmatter } = Astro.props
 ---
 
 <BaseLayout url={frontmatter.url}>

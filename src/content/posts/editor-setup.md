@@ -3,7 +3,7 @@ title: Editor Setup
 slug: editor-setup
 description: Set up your editor to build with Astro.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-04

@@ -3,7 +3,7 @@ title: Framework Components
 slug: framework-components
 description: Learn how to use React, Svelte, etc.
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-01
@@ -40,7 +40,7 @@ To use a framework component, import it from its relative path in your Astro com
 
 ```astro title="src/pages/static-components.astro" ins={2,7}
 ---
-import MyReactComponent from "../components/MyReactComponent.jsx";
+import MyReactComponent from '../components/MyReactComponent.jsx'
 ---
 
 <html>
@@ -62,9 +62,9 @@ With all client directives except `client:only`, your component will first rende
 ```astro title="src/pages/interactive-components.astro" /client:\S+/
 ---
 // Example: hydrating framework components in the browser.
-import InteractiveButton from "../components/InteractiveButton.jsx";
-import InteractiveCounter from "../components/InteractiveCounter.jsx";
-import InteractiveModal from "../components/InteractiveModal.svelte";
+import InteractiveButton from '../components/InteractiveButton.jsx'
+import InteractiveCounter from '../components/InteractiveCounter.jsx'
+import InteractiveModal from '../components/InteractiveModal.svelte'
 ---
 
 <!-- This component's JS will begin importing when the page loads -->
@@ -97,9 +97,9 @@ You can import and render components from multiple frameworks in the same Astro 
 ```astro title="src/pages/mixing-frameworks.astro"
 ---
 // Example: Mixing multiple framework components on the same page.
-import MyReactComponent from "../components/MyReactComponent.jsx";
-import MySvelteComponent from "../components/MySvelteComponent.svelte";
-import MyVueComponent from "../components/MyVueComponent.vue";
+import MyReactComponent from '../components/MyReactComponent.jsx'
+import MySvelteComponent from '../components/MySvelteComponent.svelte'
+import MyVueComponent from '../components/MyVueComponent.vue'
 ---
 
 <div>
@@ -119,12 +119,12 @@ You can pass props from Astro components to framework components:
 
 ```astro title="src/pages/frameworks-props.astro"
 ---
-import TodoList from "../components/TodoList.jsx";
-import Counter from "../components/Counter.svelte";
+import TodoList from '../components/TodoList.jsx'
+import Counter from '../components/Counter.svelte'
 ---
 
 <div>
-  <TodoList initialTodos={["learn Astro", "review PRs"]} />
+  <TodoList initialTodos={['learn Astro', 'review PRs']} />
   <Counter startingCount={1} />
 </div>
 ```
@@ -141,7 +141,7 @@ Inside of an Astro component, you **can** pass children to framework components.
 
 ```astro title="src/pages/component-children.astro" {5}
 ---
-import MyReactSidebar from "../components/MyReactSidebar.jsx";
+import MyReactSidebar from '../components/MyReactSidebar.jsx'
 ---
 
 <MyReactSidebar>
@@ -155,7 +155,7 @@ For React, Preact, and Solid these slots will be converted to a top-level prop. 
 
 ```astro title="src/pages/named-slots.astro" /slot="(.*)"/
 ---
-import MySidebar from "../components/MySidebar.jsx";
+import MySidebar from '../components/MySidebar.jsx'
 ---
 
 <MySidebar>
@@ -177,7 +177,7 @@ export default function MySidebar(props) {
       <main>{props.children}</main>
       <footer>{props.socialLinks}</footer>
     </aside>
-  );
+  )
 }
 ```
 
@@ -204,9 +204,9 @@ Inside of an Astro file, framework component children can also be hydrated compo
 
 ```astro title="src/pages/nested-components.astro" {10-11}
 ---
-import MyReactSidebar from "../components/MyReactSidebar.jsx";
-import MyReactButton from "../components/MyReactButton.jsx";
-import MySvelteButton from "../components/MySvelteButton.svelte";
+import MyReactSidebar from '../components/MyReactSidebar.jsx'
+import MyReactButton from '../components/MyReactButton.jsx'
+import MySvelteButton from '../components/MySvelteButton.svelte'
 ---
 
 <MyReactSidebar>
@@ -236,8 +236,8 @@ You can, however, use [the Astro `<slot />` pattern](/en/core-concepts/astro-com
 
 ```astro title="src/pages/astro-children.astro" {6}
 ---
-import MyReactComponent from "../components/MyReactComponent.jsx";
-import MyAstroComponent from "../components/MyAstroComponent.astro";
+import MyReactComponent from '../components/MyReactComponent.jsx'
+import MyAstroComponent from '../components/MyAstroComponent.astro'
 ---
 
 <MyReactComponent>

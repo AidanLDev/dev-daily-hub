@@ -3,7 +3,7 @@ title: Pages
 slug: pages
 description: An introduction to Astro pages
 category:
-  - WebDev
+  - Web-Dev
 tags:
   - Astro
 pubDate: 2023-09-01
@@ -36,11 +36,6 @@ A single file can also generate multiple pages using [dynamic routing](/en/core-
 
 Write standard HTML [`<a>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) in your Astro pages to link to other pages on your site. Use a **URL path relative to your root domain** as your link, not a relative file path.
 
-For example, to link to `https://example.com/authors/sonali/` from any other page on `example.com`:
-
-```astro title="src/pages/index.astro"
-Read more <a href="/authors/sonali/">about Sonali</a>.
-```
 
 ## Astro Pages
 
@@ -68,7 +63,7 @@ To avoid repeating the same HTML elements on every page, you can move common `<h
 ```astro {3} /</?MySiteLayout>/
 ---
 // src/pages/index.astro
-import MySiteLayout from "../layouts/MySiteLayout.astro";
+import MySiteLayout from '../layouts/MySiteLayout.astro'
 ---
 
 <MySiteLayout>
@@ -89,8 +84,8 @@ Page layouts are especially useful for [Markdown files](#markdownmdx-pages). Mar
 ```md {3}
 ---
 # Example: src/pages/page.md
-layout: "../layouts/MySiteLayout.astro"
-title: "My Markdown page"
+layout: '../layouts/MySiteLayout.astro'
+title: 'My Markdown page'
 ---
 
 # Title
@@ -134,7 +129,7 @@ Configure a file within the `src/pages/` directory to be a partial by adding the
 
 ```astro title="src/pages/partial.astro" ins={2}
 ---
-export const partial = true;
+export const partial = true
 ---
 
 <li>I'm a partial!</li>
@@ -179,7 +174,7 @@ The `.astro` partial must exist at the corresponding file path, and include an e
 
 ```astro title="src/pages/partials/clicked.astro" {2}
 ---
-export const partial = true;
+export const partial = true
 ---
 
 <div>I was clicked!</div>

@@ -3,7 +3,7 @@ title: Setting up CI/CD for free
 slug: building-ci-cd-for-free
 description: Setting up CI/CD for free
 category:
-  - WebDev
+  - DevOps
 tags:
   - CI CD
   - DevOps
@@ -73,13 +73,13 @@ description: |
 jobs:
   build:
     docker:
-      - image: "circleci/python:latest"
+      - image: 'circleci/python:latest'
 
     steps:
       - checkout
       - aws-s3/sync:
           from: out
-          to: "s3://example.com"
+          to: 's3://example.com'
           arguments: |
             --acl public-read \
 
