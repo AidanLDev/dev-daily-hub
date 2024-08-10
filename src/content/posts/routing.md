@@ -122,14 +122,14 @@ Rest parameters can be used with **other named parameters**. For example, GitHub
 /[org]/[repo]/tree/[branch]/[...file]
 ```
 
-In this example, a request for `/withastro/astro/tree/main/docs/public/favicon.svg` would be split into the following named parameters:
+In this example, a request for `/withastro/astro/tree/main/docs/public/favicon.ico` would be split into the following named parameters:
 
 ```js
 {
 	org: 'withastro',
 	repo: 'astro',
 	branch: 'main',
-	file: 'docs/public/favicon.svg'
+	file: 'docs/public/favicon.ico'
 }
 ```
 

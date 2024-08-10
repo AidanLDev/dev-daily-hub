@@ -33,7 +33,7 @@ A common Astro project directory might look like this:
 <FileTree>
 - public/
   - robots.txt
-  - favicon.svg
+  - favicon.ico
   - social-image.png
 - src/
   - components/
