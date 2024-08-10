@@ -9,11 +9,11 @@ tags:
   - TS
   - LeetCode
 pubDate: 2024-04-26
-cover: https://images.unsplash.com/photo-1526415302530-ad8c7d818689?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
+cover: https://devdailyhub.com/blog/leetcode-1-two-sums.webp
 coverAlt: Image with the leetCode logo on, a TypeScript logo and the text Two Sums
 author: VV
 ---
-<!-- https://devdailyhub.com/blog/leetcode-1-two-sums.webp -->
+
 # LeetCode 1. Two Sums
 
 If you prefer a visual explanation, please check out [my video here](https://youtu.be/4oPGx3ROuHo?si=vZsFc3WNTT56egjW), although bare in mind this is the first video I've recorded so the mic settings weren't great so it might be easier for you to read the solution here.
