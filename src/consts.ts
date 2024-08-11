@@ -36,7 +36,10 @@ export const HeaderLinks = [
 ]
 
 // Footer Links, src/components/Footer.astro
-export const FooterLinks = [{ href: '/tags', title: 'Tags' }]
+export const FooterLinks = [
+  { href: '/tags', title: 'Tags' },
+  { href: '/about', title: 'About' },
+]
 
 // Social Links, src/components/Footer.astro
 export const SocialLinks = [
