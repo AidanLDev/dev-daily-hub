@@ -36,7 +36,7 @@
     "@tailwindcss/typography": "^0.5.14",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.5",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "typescript": "^5.5.4",
     "sst": "^2.43.4",
     "aws-cdk-lib": "2.142.1",
