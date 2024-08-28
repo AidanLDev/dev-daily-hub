@@ -17,6 +17,12 @@ Want to create customisable QR codes on your site? Similar to what sites like <a
 
 qrcode.react have a <a href="https://zpao.github.io/qrcode.react/" target="__blank">fantastic demo</a> where you can play around with the different props and settings that the library offers. Play and see what's possible.
 
+If you're starting from a blank slate, follow along by first creating a react app
+
+```shell
+npx create-react-app qr-gen --template typescript
+```
+
 Now first step to using this library is to download it!
 
 NPM:
@@ -39,14 +45,14 @@ yarn add qrcode.react
 
 Step one wasn't so bad... now let's create us a QR component that will render the QR code we're generating to the FE so we can see our magic come to life before our eyes:
 
-`QRCodeSVG.tsx`
+`QrCode.tsx`
 
 ```React
 import { QRCodeSVG } from 'qrcode.react'
 
-export default function QRCodeSvg() {
+export default function QrCode() {
   return (
-    <QRCodeSVG
+    <QrCode
       value="https://http://devdailyhub.com/"
       size={128}
       bgColor={'#FFF'}
@@ -59,14 +65,14 @@ export default function QRCodeSvg() {
 Now wherever you want to display the QR code in your project, simply import and return the component:
 
 ```Main.tsx
-import QRCodeSvg from './QRCodeSvg' // <--- Make this path point to wherever you saved the QRCodeSvg component
+import QrCode from './QrCode' // <--- Make this path point to wherever you saved the QrCode component
 
 export default function Main() {
   return (
     <div>
        <h1>Hello guys</h1>
        {/* some other random content that's top notch */}
-       <QrCodeSvg />
+       <QrCode />
     </div>
   )
 }
@@ -78,7 +84,7 @@ That's all well and good, but it's not that exciting really is it? A plain, blac
 
 Let's create us a form to capture some config options that's take our QR Code to the NEXT LEVEL 🚀!
 
-First off, we want to create some state so we can update some values and send them to our `QRCodeSVG` component.
+First off, we want to create some state so we can update some values and send them to our `QrCode` component.
 
 In `Main.tsx`:
 
@@ -258,30 +264,30 @@ export default function QRConfigForm({
 }
 ```
 
-Now we can import and pass the values we set in this form from our `Main.tsx` down to our `QRCodeSVG.tsx` component:
+Now we can import and pass the values we set in this form from our `Main.tsx` down to our `QrCode.tsx` component:
 
-First off let's set-up the interface and QRCodeSVG component so it's ready to accept our form data as props:
+First off let's set-up the interface and QrCode component so it's ready to accept our form data as props:
 
-`QRCodeSVG.tsx`
+`QrCode.tsx`
 
 ```React
 import { QRCodeSVG } from 'qrcode.react'
 
-interface IQRCodeSVg {
+interface IQrCode {
   url: string;
   size: number;
   bgColor: string;
   fgColor: string;
 }
 
-export default function QRCodeSvg({
+export default function QrCode({
   url,
   size,
   bgColor,
   fgColor
 }) {
   return (
-    <QRCodeSVG
+    <QrCode
       value={url ?? "https://http://devdailyhub.com/"}
       size={size ?? 128}
       bgColor={bgColor ?? '#FFF'}
@@ -291,7 +297,7 @@ export default function QRCodeSvg({
 }
 ```
 
-Now we can pass the state down to the `QRCodeSVG` component:
+Now we can pass the state down to the `QrCode` component:
 
 `Main.tsx`
 
@@ -299,7 +305,7 @@ Now we can pass the state down to the `QRCodeSVG` component:
 /* Imports and other code... */
 return (
   {/* Other code in our return */}
-  <QRCodeSVG
+  <QrCode
     url={url}
     size={size}
     bgColor={backgroundColour}
