@@ -47,7 +47,7 @@ Step one wasn't so bad... now let's create us a QR component that will render th
 
 `QrCode.tsx`
 
-```React
+```tsx
 import { QRCodeSVG } from 'qrcode.react'
 
 export default function QrCode() {
@@ -62,17 +62,19 @@ export default function QrCode() {
 }
 ```
 
-Now wherever you want to display the QR code in your project, simply import and return the component:
+Now wherever you want to display the QR code in your project, simply import and return the component `App.tsx`:
 
-```Main.tsx
+```tsx
 import QrCode from './QrCode' // <--- Make this path point to wherever you saved the QrCode component
 
-export default function Main() {
+export default function App() {
   return (
-    <div>
-       <h1>Hello guys</h1>
-       {/* some other random content that's top notch */}
-       <QrCode />
+    <div className="App">
+      <header className="App-header">
+        <h1>Amazing QR Gen App</h1>
+      </header>
+      {/* some other random content that's top notch */}
+      <QrCode />
     </div>
   )
 }
@@ -82,21 +84,36 @@ Easy as pie, we got ourselves a QR code, give it a scan to test it out!
 
 That's all well and good, but it's not that exciting really is it? A plain, black and white QR code with no character... We can do better than that!
 
+We need to update the default styles to stop the header taking up ALL of the height now, in `App.css` make sure your `.App-header` class looks like this:
+
+```css
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-bottom: 2rem;
+}
+```
+
 Let's create us a form to capture some config options that's take our QR Code to the NEXT LEVEL 🚀!
 
 First off, we want to create some state so we can update some values and send them to our `QrCode` component.
 
-In `Main.tsx`:
+In `App.tsx`:
 
-```React
+```tsx
 
-export default function Main() {
+export default function App() {
   import { useState }, React from "react"
 
-  const [url, setUrl] = useState('')
-  const [size, setSize] = useState(300)
-  const [backgroundColour, setBackgroundColour] = useState('#FFF')
-  const [foregroundColour, setForegroundColour] = useState('#000')
+  const [url, setUrl] = useState('');
+  const [size, setSize] = useState(128);
+  const [bgColour, setBgColour] = useState('#FFF');
+  const [fgColour, setFgColour] = useState('#000');
 
   return (
     // ... our current code
@@ -104,160 +121,119 @@ export default function Main() {
 }
 ```
 
-Okay now let's move onto creating some essential Form Components that we can re-use
+Okay now let's move onto creating some essential Form Components that we can re-use, we will add a new folder and file called `types/types.ts`:
+
+`types.ts`
+
+```ts
+export interface ICoreInput {
+  type?: 'text' | 'number'
+  id: string
+  label: string
+}
+```
 
 `TextInput.tsx`
 
-```React
-import React, { Dispatch, SetStateAction } from "react";
+```tsx
+import React, { ChangeEvent, Dispatch, SetStateAction } from 'react'
+import { ICoreInput } from '../types/types'
 
-interface ITextInput {
-  id: string
-  label: string
-  value: string
-  setValue: Dispatch<SetStateAction<string>>
-  type?: string
-  inputClassName?: string
-  containerClassName?: string
-  setFocus?: Dispatch<SetStateAction<boolean>>
+interface ITextInput<T extends string | number> extends ICoreInput {
+  value: T
+  setValue: Dispatch<SetStateAction<T>>
+  max?: number
+  min?: number
 }
 
-export default function Input({
+export default function TextInput<T extends string | number>({
   id,
   label,
   value,
   setValue,
   type,
-  inputClassName,
-  containerClassName,
-  setFocus,
-}: ITextInput) {
-  return (
-    <div>
-      <label htmlFor={id}>{label}</label>
-      <input
-        id={id}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        type={type}
-        onFocus={() => setFocus && setFocus(true)}
-        onBlur={() => setFocus && setFocus(false)}
-      />
-    </div>
-  );
-}
-```
-
-`NumberInput.tsx`
-
-```React
-import React, { Dispatch, SetStateAction } from 'react'
-
-interface INumberInputProps {
-  min?: number
-  max?: number
-  id: string
-  label: string
-  value: number
-  setValue: Dispatch<SetStateAction<number>>
-  inputClassName?: string
-  containerClassName?: string
-  setFocus?: Dispatch<SetStateAction<boolean>>
-}
-
-export default function NumberInput({
-  min,
   max,
-  id,
-  label,
-  value,
-  setValue,
-  inputClassName,
-  containerClassName,
-  setFocus,
-}: INumberInputProps) {
+  min,
+}: ITextInput<T>) {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (type === 'number') {
+      setValue(Number(e.target.value) as T)
+    } else {
+      setValue(e.target.value as T)
+    }
+  }
   return (
     <div>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>{label}: </label>
       <input
         id={id}
+        name={id}
         value={value}
-        onChange={(e) => {
-          if (min && max) {
-            if (Number(e.target.value) > max || Number(e.target.value) < min) {
-              return
-            }
-          }
-          setValue(Number(e.target.value))
-        }}
-        type="number"
-        onFocus={() => setFocus && setFocus(true)}
-        onBlur={() => setFocus && setFocus(false)}
-        min={min}
+        type={type || 'text'}
+        onChange={handleChange}
         max={max}
+        min={min}
       />
     </div>
   )
 }
-
 ```
 
 `QRConfigForm.tsx`
 
-```React
-"use client"
+```tsx
+import React, { Dispatch, SetStateAction } from 'react'
+import TextInput from './TextInput'
 
-import React, { Dispatch, SetStateAction } from "react"
-
-interface IQRConfigForm {
+interface IQrConfigForm {
   url: string
   setUrl: Dispatch<SetStateAction<string>>
   size: number
   setSize: Dispatch<SetStateAction<number>>
-  backgroundColour: string
-  setBackgroundColour: Dispatch<SetStateAction<string>>
-  foregroundColour: string
-  setForegroundColour: Dispatch<SetStateAction<string>>
+  bgColour: string
+  setBgColour: Dispatch<SetStateAction<string>>
+  fgColour: string
+  setFgColour: Dispatch<SetStateAction<string>>
 }
 
-export default function QRConfigForm({
+export default function QrConfigForm({
   url,
   setUrl,
   size,
   setSize,
-  backgroundColour,
-  setBackgroundColour,
-  foregroundColour,
-  setForegroundColour
-}: IQRConfigForm) {
-
+  bgColour,
+  setBgColour,
+  fgColour,
+  setFgColour,
+}: IQrConfigForm) {
   return (
-    <div>
-      <TextInput
+    <div className="qr-config-form-container">
+      <TextInput<string>
         id="url"
         label="QR URL"
         setValue={setUrl}
         value={url}
       />
-      <NumberInput
+      <TextInput<number>
         id="size"
-        label="size"
+        label="QR Size"
+        setValue={setSize}
+        value={size}
+        type="number"
         min={1}
         max={10000}
-        value={size}
-        setValue={setSize}
       />
-      <TextInput
-        id="bgColour"
+      <TextInput<string>
+        id="background-colour"
+        value={bgColour}
+        setValue={setBgColour}
         label="Background Colour"
-        setValue={setBackgroundColour}
-        value={backgroundColour}
       />
-      <TextInput
-        id="fgColour"
+      <TextInput<string>
+        id="foreground-colour"
+        value={fgColour}
+        setValue={setFgColour}
         label="Foreground Colour"
-        setValue={setForegroundColour}
-        value={foregroundColour}
       />
     </div>
   )
@@ -270,25 +246,20 @@ First off let's set-up the interface and QrCode component so it's ready to accep
 
 `QrCode.tsx`
 
-```React
+```tsx
 import { QRCodeSVG } from 'qrcode.react'
 
 interface IQrCode {
-  url: string;
-  size: number;
-  bgColor: string;
-  fgColor: string;
+  url: string
+  size: number
+  bgColor: string
+  fgColor: string
 }
 
-export default function QrCode({
-  url,
-  size,
-  bgColor,
-  fgColor
-}) {
+export default function QrCode({ url, size, bgColor, fgColor }) {
   return (
     <QrCode
-      value={url ?? "https://http://devdailyhub.com/"}
+      value={url ?? 'https://devdailyhub.com/'}
       size={size ?? 128}
       bgColor={bgColor ?? '#FFF'}
       fgColor={fgColor ?? '#000'}
@@ -301,17 +272,38 @@ Now we can pass the state down to the `QrCode` component:
 
 `Main.tsx`
 
-```React
-/* Imports and other code... */
-return (
-  {/* Other code in our return */}
-  <QrCode
-    url={url}
-    size={size}
-    bgColor={backgroundColour}
-    fgColor={foregroundColour}
-  />
-)
+```tsx
+import { QRCodeSVG } from 'qrcode.react'
+
+interface IQrCode {
+  url: string
+  size: number
+  bgColour: string
+  fgColour: string
+}
+
+export default function QrCode({ bgColour, fgColour, size, url }: IQrCode) {
+  return (
+    <QRCodeSVG
+      value={url ?? 'https://devdailyhub.com'}
+      size={size ?? 128}
+      bgColor={bgColour ?? '#FFF'}
+      fgColor={fgColour ?? '#000'}
+    />
+  )
+}
+```
+
+It looks so basic, it's pretty horrible, this isn't a guide on how to make the most sexy web app however, so just a few basic styles to stop our eyes from falling out... Add this class to the `App.css` file to spruce up the form a little:
+
+```css
+.qr-config-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+}
 ```
 
 Much more interesting! Now we can update the URL our QR code points to, we can update the size and both the foreground & background colours!
