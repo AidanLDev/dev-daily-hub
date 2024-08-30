@@ -1,14 +1,13 @@
 ---
 title: Generate QR Codes in React
-slug: using-qrcode-react.md
+slug: using-qrcode-react
 description: QR codes are visually impactful ways to link to different resources. They have a wide application from product packaging to advertising. Utalise these powerful linking images in your React projects
 category:
   - Web-Dev
 tags:
   - React
 pubDate: 2024-08-23
-cover: https://devdailyhub.com/blog/leetcode-1-two-sums.webp
-# FreeQRGenLogo.webp
+cover: https://devdailyhub.com/blog/FreeQRGenLogo.webp
 coverAlt: Image with the the Free QR Gen logo on it
 author: VV
 ---
@@ -312,8 +311,7 @@ There's still a load of improvements we can make however, typing in a colour is 
 
 You can see a fully working version of this with the above improvements at <a href="https://freeqrgen.net" target="__blank">freeqrgen.net</a>
 
-If you'd like me to go through any of the above do let me know at <a href="mailto:dev@aidanlowson.com">dev@aidanlowson.com</a>
-
-<!-- TODO: Check this link works -->
+If you'd like me to go through any of the above do let me know at <a href="mailto:dev@aidanlowson.com" target="__blank">dev@aidanlowson.com</a>
 
 Also a YT video will be coming soon, <a href="https://www.youtube.com/@aidanl94" target="__blank">subscribe here to keep up-to-date</a>.
+
