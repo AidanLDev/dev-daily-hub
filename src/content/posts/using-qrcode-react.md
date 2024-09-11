@@ -16,6 +16,8 @@ Want to create customisable QR codes on your site? Similar to what sites like <a
 
 qrcode.react have a <a href="https://zpao.github.io/qrcode.react/" target="__blank">fantastic demo</a> where you can play around with the different props and settings that the library offers. Play and see what's possible.
 
+If you'd rather watch how it's done than read, I have a <a href="https://youtu.be/asYpp_AMXd8" target="__blank">code-walkthrough of creating a React QR Code application</a>.
+
 If you're starting from a blank slate, follow along by first creating a react app
 
 ```shell
@@ -313,5 +315,4 @@ You can see a fully working version of this with the above improvements at <a hr
 
 If you'd like me to go through any of the above do let me know at <a href="mailto:dev@aidanlowson.com" target="__blank">dev@aidanlowson.com</a>
 
-Also a YT video will be coming soon, <a href="https://www.youtube.com/@aidanl94" target="__blank">subscribe here to keep up-to-date</a>.
-
+Do Subscribe to <a href="https://www.youtube.com/@aidanl94" target="__blank">my YouTube channel</a> where I'll be doing more guides, code-through and other programming related content subscribe here to keep up-to-date.
