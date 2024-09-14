@@ -1,20 +1,20 @@
-import { defineConfig } from "astro/config";
-import { remarkModifiedTime } from "./src/utils/remark-modified-time.mjs";
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import partytown from "@astrojs/partytown";
-import pagefind from "astro-pagefind";
-import icon from "astro-icon";
-import tailwind from "@astrojs/tailwind";
-import aws from "astro-sst";
+import { defineConfig } from 'astro/config'
+import { remarkModifiedTime } from './src/utils/remark-modified-time.mjs'
+import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
+import partytown from '@astrojs/partytown'
+import pagefind from 'astro-pagefind'
+import icon from 'astro-icon'
+import tailwind from '@astrojs/tailwind'
+import aws from "astro-sst"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://devdailyhub.com",
-  trailingSlash: "never",
+  site: 'https://devdailyhub.com',
+  trailingSlash: 'never',
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: "viewport",
+    defaultStrategy: 'viewport',
   },
 
   experimental: {
@@ -24,8 +24,8 @@ export default defineConfig({
   image: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "*.unsplash.com",
+        protocol: 'https',
+        hostname: '*.unsplash.com',
       },
     ],
   },
@@ -42,17 +42,17 @@ export default defineConfig({
 
     partytown({
       config: {
-        forward: ["dataLayer.push"],
+        forward: ['dataLayer.push'],
         debug: false,
       },
     }),
 
     icon({
       include: {
-        tabler: ["*"],
+        tabler: ['*'],
       },
     }),
   ],
-  output: "hybrid",
-  adapter: aws(),
-});
+  output: 'hybrid',
+  adapter: aws()
+})

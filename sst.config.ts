@@ -1,24 +1,20 @@
-import type { SSTConfig } from "sst";
-import { AstroSite } from "sst/constructs";
+/// <reference path="./.sst/platform/config.d.ts" />
 
-export default {
-  config(_input) {
+import { domainAlias, domainName } from '@consts'
+
+export default $config({
+  app(input) {
     return {
-      name: "dev-daily-hub",
-      region: "us-east-1",
-    };
+      name: 'dev-daily-hub',
+      removal: input?.stage === 'production' ? 'retain' : 'remove',
+      home: 'aws',
+      region: 'us-east-1',
+    }
   },
-  stacks(app) {
-    app.stack(function Site({ stack }) {
-      const site = new AstroSite(stack, "site", {
-        customDomain: {
-          domainName: "devdailyhub.com",
-          domainAlias: "www.devdailyhub.com",
-        },
-      });
-      stack.addOutputs({
-        url: site.url,
-      });
-    });
+  async run() {
+    new sst.aws.Astro('dev_daily_hub', {
+      domain: { name: domainName, redirects: [domainAlias] },
+    })
   },
-} satisfies SSTConfig;
+})
+

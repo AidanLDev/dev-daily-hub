@@ -60,3 +60,5 @@ export const SocialLinks = [
 // Search Page Metadata, src/pages/search.astro
 export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`
 export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`
+export const domainName = 'devdailyhub.com'
+export const domainAlias = 'www.devdailyhub.com'

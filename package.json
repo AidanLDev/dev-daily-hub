@@ -3,16 +3,16 @@
   "type": "module",
   "version": "4.8.0",
   "scripts": {
-    "dev": "sst bind astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "format": "prettier -w .",
     "astro": "astro",
-    "deploy": "sst deploy",
-    "sst:dev": "sst dev",
+    "build": "astro check && astro build",
+    "deploy": "npx sst deploy --stage production",
+    "dev": "sst bind astro dev",
+    "format": "prettier -w .",
     "initSst": "npx sst start",
-    "sst:remove": "sst remove"
+    "preview": "astro preview",
+    "sst:dev": "sst dev",
+    "sst:remove": "sst remove",
+    "start": "astro dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
@@ -25,22 +25,21 @@
     "astro": "^4.13.1",
     "astro-icon": "^1.1.0",
     "astro-pagefind": "^1.6.0",
-    "aws-cdk-lib": "^2.151.0",
+    "astro-sst": "2.43.5",
+    "aws-cdk-lib": "^2.91.0",
     "dayjs": "^1.11.12",
     "pagefind": "^1.1.0",
     "preline": "^2.4.1",
     "sharp": "^0.33.4",
+    "sst": "3.1.10",
     "tailwindcss": "^3.4.8"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.14",
+    "constructs": "10.2.69",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.5",
-    "typescript": "^5.5.4",
-    "sst": "^2.43.4",
-    "aws-cdk-lib": "2.142.1",
-    "constructs": "10.3.0",
-    "astro-sst": "^2.43.4"
+    "typescript": "^5.5.4"
   }
 }
