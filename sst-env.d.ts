@@ -5,5 +5,9 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
+    "dev_daily_hub": {
+      "type": "sst.aws.Astro"
+      "url": string
+    }
   }
 }
