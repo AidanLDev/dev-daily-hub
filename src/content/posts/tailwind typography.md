@@ -8,7 +8,7 @@ tags:
   - Tailwind
   - Astro
 pubDate: 2023-09-08
-cover: https://images.unsplash.com/photo-1506794778225-cbf6c8df4c5c?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
+cover: https://devdailyhub.com/blog/      plash.com/photo-1506794778225-cbf6c8df4c5c?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: AstroVerse-tailwind-typography
 author: VV
 ---

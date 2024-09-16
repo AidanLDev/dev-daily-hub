@@ -7,7 +7,7 @@ category:
 tags:
   - Astro
 pubDate: 2023-09-01
-cover: https://images.unsplash.com/photo-1572283046480-e990be92d301?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
+cover: https://devdailyhub.com/blog/pages.webp
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
@@ -35,7 +35,6 @@ A single file can also generate multiple pages using [dynamic routing](/en/core-
 ### Link between pages
 
 Write standard HTML [`<a>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) in your Astro pages to link to other pages on your site. Use a **URL path relative to your root domain** as your link, not a relative file path.
-
 
 ## Astro Pages
 
