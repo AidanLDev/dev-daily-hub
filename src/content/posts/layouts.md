@@ -43,7 +43,7 @@ const { title } = Astro.props
     <nav>
       <a href="#">Home</a>
       <a href="#">Posts</a>
-      <a href="#">Contact</a>
+      <a href="https://aidanlowson.com" target="_blank">Contact</a>
     </nav>
     <h1>{title}</h1>
     <article>
