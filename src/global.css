@@ -1,0 +1,13 @@
+a {
+  display: inline-block; /* inline-block */
+  transition: background-color 0.2s; /* For smooth hover transition */
+  color: #ebe1e1;
+}
+a:hover {
+  color: #737373; /* hover:bg-neutral-500 */
+  text-decoration: underline;
+}
+a.dark {
+  color: #525252; /* dark:bg-neutral-600 */
+
+}
