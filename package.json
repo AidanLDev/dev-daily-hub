@@ -12,7 +12,8 @@
     "preview": "astro preview",
     "sst:dev": "sst dev",
     "sst:remove": "sst remove",
-    "start": "astro dev"
+    "start": "astro dev",
+    "refresh": "npx sst refresh --stage production"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
@@ -43,3 +44,4 @@
     "typescript": "^5.5.4"
   }
 }
+

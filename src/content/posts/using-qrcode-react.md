@@ -7,10 +7,12 @@ category:
 tags:
   - React
 pubDate: 2024-08-23
-cover: https://devdailyhub.com/blog/FreeQRGenLogo.webp
+cover: https://images.unsplash.com/photo-1506220926022-cc5c12acdb35?q=80&w=1960&h=1102&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 coverAlt: Image with the the Free QR Gen logo on it
 author: VV
 ---
+
+<!--  https://devdailyhub.com/blog/FreeQRGenLogo.webp -->
 
 Want to create customisable QR codes on your site? Similar to what sites like <a href="https://freeqrgen.net" target="__blank">freeqrgen.net</a> are doing? Well wonder no more, I will go into the process of installing the pwoerful package <a href="https://www.npmjs.com/package/qrcode.react" target="__blank">qrcode.react</a> and give some examples of how to integrate this tool into your React toolbelt.
 
