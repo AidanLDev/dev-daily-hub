@@ -1,3 +1,7 @@
+:root {
+  --dark-mode-text: rgb(163 163 163);
+}
+
 a {
   display: inline-block; /* inline-block */
   transition: background-color 0.2s; /* For smooth hover transition */
@@ -9,5 +13,28 @@ a:hover {
 }
 a.dark {
   color: #525252; /* dark:bg-neutral-600 */
-
 }
+
+html.dark p,
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark ul {
+  color: var(--dark-mode-text);
+}
+
+ul {
+  text-indent: 0.25rem;
+}
+ul li {
+  display: list-item;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+ul li::marker {
+  text-indent: 2rem;
+}
+

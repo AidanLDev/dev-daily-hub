@@ -39,6 +39,7 @@ export const HeaderLinks = [
 export const FooterLinks = [
   { href: '/tags', title: 'Tags' },
   { href: '/about', title: 'About' },
+  { href: '/privacy-policy', title: 'Privacy Policy' },
 ]
 
 // Social Links, src/components/Footer.astro
