@@ -46,7 +46,7 @@ export const SocialLinks = [
   // { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
   {
     href: 'https://x.com/aidanl94',
-    icon: 'tabler:brand-twitter',
+    icon: 'tabler:brand-x',
     label: 'Twitter',
   },
   {
@@ -54,7 +54,31 @@ export const SocialLinks = [
     icon: 'tabler:brand-github',
     label: 'GitHub',
   },
-  // TODO: Add the rest of my links
+  {
+    href: 'https://www.youtube.com/channel/UCDJAFkcMY5Ze3SKQS-fhg0A',
+    icon: 'tabler:brand-youtube',
+    label: 'YouTube',
+  },
+  {
+    href: 'https://www.instagram.com/lowsonaidan/',
+    icon: 'tabler:brand-instagram',
+    label: 'Instagram',
+  },
+  {
+    href: 'https://www.linkedin.com/in/aidanlowson1/',
+    icon: 'tabler:brand-linkedin',
+    label: 'LinkedIn',
+  },
+  {
+    href: 'https://www.tiktok.com/@aidanlowson',
+    icon: 'tabler:brand-tiktok',
+    label: 'TikTok',
+  },
+  {
+    href: 'https://aidanlowson.com',
+    icon: 'tabler:world-www',
+    label: 'Portfolio',
+  },
 ]
 
 // Search Page Metadata, src/pages/search.astro
