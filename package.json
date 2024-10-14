@@ -27,7 +27,7 @@
     "astro-icon": "^1.1.0",
     "astro-pagefind": "^1.6.0",
     "astro-sst": "2.43.5",
-    "aws-cdk-lib": "^2.91.0",
+    "aws-cdk-lib": "^2.162.1",
     "dayjs": "^1.11.12",
     "pagefind": "^1.1.0",
     "preline": "^2.4.1",
