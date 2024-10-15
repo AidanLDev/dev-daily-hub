@@ -7,12 +7,10 @@ category:
 tags:
   - React
 pubDate: 2024-10-15
-cover: https://devdailyhub.com/blog/deploy-your-astro-site.webp
+cover: https://devdailyhub.com/blog/create-react-19-project.webp
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
-
-<!-- TODO: Update cover to https://devdailyhub.com/blog/create-react-19-project.webp -->
 
 # Creating a React 19 project
 
@@ -45,3 +43,4 @@ If you're using TypeScript you also need to update the types. Once React 9s is r
 ```
 
 [For more info on upgrading to React 19](https://react.dev/blog/2024/04/25/react-19-upgrade-guide)
+
