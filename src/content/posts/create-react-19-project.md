@@ -16,7 +16,7 @@ author: VV
 
 As React 19 hasn't been released yet, to use the latest `React 19` changes you will have to manually update the `React` and `React DOM` packages.
 
-<!-- TODO Add video here -->
+<a href="https://www.youtube.com/watch?v=HYJNYOw_F6I" target="__blank">If you prefer to watch rather than read, please see this tutorial here</a>
 
 To get up and running from nothing, first use `npx create-react-app <appName>`
 
@@ -43,4 +43,3 @@ If you're using TypeScript you also need to update the types. Once React 9s is r
 ```
 
 [For more info on upgrading to React 19](https://react.dev/blog/2024/04/25/react-19-upgrade-guide)
-
