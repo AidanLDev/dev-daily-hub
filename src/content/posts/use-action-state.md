@@ -7,12 +7,10 @@ category:
 tags:
   - React
 pubDate: 2024-10-22
-cover: https://devdailyhub.com/blog/create-react-19-project.webp
+cover: https://devdailyhub.com/blog/useActionState.webp
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
-
-<!-- TODO: Update the cover photo -->
 
 # A Guide to useActionState
 
