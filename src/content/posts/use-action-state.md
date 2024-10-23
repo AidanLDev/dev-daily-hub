@@ -16,7 +16,7 @@ author: VV
 
 To complement [React Actions](https://19.react.dev/reference/rsc/server-functions) React have released a new hook `useActionState` that helps manage state, status and visual feedback. These are useful when working with forms.
 
-<!-- TODO: Add YouTube link -->
+If you prefer watching rather than reading, <a href="https://youtu.be/bCUbKo6X93w" target="__blank">check out my video where I go through creating a form in React from scratch and implement useActionState.</a>
 
 This hook simplifies managing form states and form submissions. Using Actions, it captures form input data, handles validation, and error states, reducing the need for custom state management logic. It also exposes a `pending` state so you can show a loader while the action is being executed
 
@@ -54,4 +54,3 @@ The `formState` is the value returned by the `formAction`.
 - `fn`: The function to be called when the form is submitted or button pressed. It takes the previous state of the form (initially the `initialState` that we pass), followed by `FormData`, the argument that a `Action` usually receives.
 - `initilState` - The value you want the state it to be initially
 - `permalink (optional)` - A string containing the unique page URL that this form modifies. For use on pages with dynamic content (eg: feeds) in conjunction with progressive enhancement: it `fn` is a `serverAction` and the form is submitted before the JS bundle loads, the browser will navigate to the specified permalink URL, rather than the current page's URL.
-
