@@ -16,7 +16,7 @@ author: VV
 
 Allows you to optimistically update the UI before the `Server Action` finishes executing, rather than waiting for the response. When the async action completes, the UI updates with the final state from the server
 
-<!-- TODO Add youTube link once that video has been made -->
+If you are a visual learning, do checkout <a href="https://youtu.be/Frb0RheJGPU" target="__blank">my YouTube How To on implementing a form in React 19 that uses useOptimistic</a>.
 
 The following will show the new message on the UI while the `formAction` asynchronously stores the message on the server.
 
