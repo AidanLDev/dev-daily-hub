@@ -7,12 +7,10 @@ category:
 tags:
   - React
 pubDate: 2024-11-02
-cover: https://devdailyhub.com/blog/useActionState.webp
+cover: https://devdailyhub.com/blog/useFormStatus.webp
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
-
-<!-- useFormStatus.webp -->
 
 If you prefer to watch a code walk-through of this hook in action, please visit <a href="https://youtu.be/KvO3pf-s3Sw" target="__blank">my React 19 useFormStatus how to</a>
 
