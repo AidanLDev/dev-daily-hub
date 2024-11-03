@@ -7,12 +7,10 @@ category:
 tags:
   - React
 pubDate: 2024-10-26
-cover: https://devdailyhub.com/blog/useActionState.webp
+cover: https://devdailyhub.com/blog/useOptimistic.png 
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
-
-<!-- useOptimistic.png -->
 
 Allows you to optimistically update the UI before the `Server Action` finishes executing, rather than waiting for the response. When the async action completes, the UI updates with the final state from the server
 
