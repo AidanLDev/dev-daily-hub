@@ -32,7 +32,7 @@
     "pagefind": "^1.1.1",
     "preline": "^2.4.1",
     "sharp": "^0.33.5",
-    "sst": "3.1.10",
+    "sst": "3.2.73",
     "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
