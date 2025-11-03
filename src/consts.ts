@@ -5,7 +5,7 @@
 export const BRAND_NAME = 'Dev Daily Hub'
 export const SITE_TITLE = 'Dev Daily Hub'
 export const SITE_DESCRIPTION =
-  'A place for devs with content written by devs. Writing guides, how-tos, self help and keeping up to date with the latest and greatest in the dev world.'
+  'A place for devs with content written by devs. Writing guides, how-tos and keeping up to date with the latest and greatest in the dev world.'
 
 // Tags Page Metadata, src/pages/tags/index.astro
 export const Tags_TITLE = 'Dev Daily Hub - All Tags'
@@ -32,7 +32,6 @@ export function getCategoryMetadata(category: string) {
 export const HeaderLinks = [
   { href: '/category/Web-Dev/1', title: 'Web-Dev' },
   { href: '/category/DevOps/1', title: 'DevOps' },
-  { href: '/category/Self-Help/1', title: 'Self-Help' },
 ]
 
 // Footer Links, src/components/Footer.astro

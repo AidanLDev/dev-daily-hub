@@ -7,6 +7,7 @@
     "build": "astro check && astro build",
     "deploy": "npx sst deploy --stage production",
     "dev": "sst bind astro dev",
+    "astro:dev": "astro dev",
     "format": "prettier -w .",
     "initSst": "npx sst start",
     "preview": "astro preview",
@@ -44,3 +45,4 @@
     "typescript": "^5.6.3"
   }
 }
+

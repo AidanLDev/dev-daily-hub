@@ -6,7 +6,7 @@ import partytown from '@astrojs/partytown'
 import pagefind from 'astro-pagefind'
 import icon from 'astro-icon'
 import tailwind from '@astrojs/tailwind'
-import aws from "astro-sst"
+import aws from 'astro-sst'
 
 // https://astro.build/config
 export default defineConfig({
@@ -54,5 +54,5 @@ export default defineConfig({
     }),
   ],
   output: 'hybrid',
-  adapter: aws()
+  adapter: aws(),
 })
