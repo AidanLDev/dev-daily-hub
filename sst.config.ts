@@ -1,7 +1,5 @@
 /// <reference path="./.sst/platform/config.d.ts" />
 
-import { domainAlias, domainName } from '@consts'
-
 export default $config({
   app(input) {
     return {
@@ -12,6 +10,10 @@ export default $config({
     }
   },
   async run() {
+    // SST disallows top-level imports in sst.config.ts. Do a dynamic import
+    // for values we need from `@consts` so the config remains valid.
+    const { domainAlias, domainName } = await import('@consts')
+
     new sst.aws.Astro('dev_daily_hub', {
       domain: { name: domainName, redirects: [domainAlias] },
     })
