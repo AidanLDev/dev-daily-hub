@@ -4,7 +4,7 @@
   "version": "4.8.0",
   "scripts": {
     "astro": "astro",
-    "build": "astro check && astro build",
+    "build": "astro check --minimumSeverity warning && astro build",
     "deploy": "npx sst deploy --stage production",
     "dev": "sst bind astro dev",
     "astro:dev": "astro dev",
@@ -12,7 +12,7 @@
     "initSst": "npx sst start",
     "preview": "astro preview",
     "sst:dev": "sst dev",
-    "sst:remove": "sst remove",
+    "sst:remove": "sst remove --stage production",
     "start": "astro dev",
     "refresh": "npx sst refresh --stage production"
   },
@@ -27,7 +27,7 @@
     "astro": "^4.16.5",
     "astro-icon": "^1.1.1",
     "astro-pagefind": "^1.6.0",
-    "astro-sst": "2.43.5",
+    "astro-sst": "3.1.4",
     "aws-cdk-lib": "^2.158.0",
     "dayjs": "^1.11.13",
     "pagefind": "^1.1.1",
@@ -46,3 +46,4 @@
     "typescript": "^5.6.3"
   }
 }
+
