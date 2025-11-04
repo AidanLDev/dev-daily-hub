@@ -7,7 +7,7 @@ category:
 tags:
   - Astro
 pubDate: 2023-09-06
-cover: https://devdailyhub.com/blog/astro-islands.webp
+cover: /blog/astro-islands.webp
 coverAlt: AstroVerse-Astro Islands
 author: VV
 ---

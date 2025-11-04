@@ -7,7 +7,7 @@ category:
 tags:
   - React
 pubDate: 2024-08-23
-cover: https://devdailyhub.com/blog/FreeQRGenLogo.webp
+cover: /blog/FreeQRGenLogo.webp
 coverAlt: Image with the the Free QR Gen logo on it
 author: VV
 ---

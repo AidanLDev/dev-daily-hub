@@ -7,7 +7,7 @@ category:
 tags:
   - React
 pubDate: 2024-10-26
-cover: https://devdailyhub.com/blog/useOptimistic.png 
+cover: /blog/useOptimistic.png
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
@@ -57,3 +57,4 @@ As you can see from the example above, the use case for this could be an instant
 An example of how you could show different states between the local state and the server state is what WhatsApp do with the ticks, they will display 1 tick for sent and 2 for delivered.
 
 [Learn more](https://vercel.com/blog/whats-new-in-react-19)
+

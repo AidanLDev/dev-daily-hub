@@ -9,7 +9,7 @@ tags:
   - TS
   - LeetCode
 pubDate: 2024-04-26
-cover: https://devdailyhub.com/blog/leetcode-1-two-sums.webp
+cover: /blog/leetcode-1-two-sums.webp
 coverAlt: Image with the leetCode logo on, a TypeScript logo and the text Two Sums
 author: VV
 ---

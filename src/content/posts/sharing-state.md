@@ -7,7 +7,7 @@ category:
 tags:
   - Astro
 pubDate: 2023-09-06
-cover: https://devdailyhub.com/blog/sharing-state-between-islands.webp
+cover: /blog/sharing-state-between-islands.webp
 coverAlt: AstroVerse-Astro Islands
 author: VV
 ---

@@ -7,7 +7,7 @@ category:
 tags:
   - React
 pubDate: 2024-10-22
-cover: https://devdailyhub.com/blog/useActionState.webp
+cover: /blog/useActionState.webp
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
@@ -54,3 +54,4 @@ The `formState` is the value returned by the `formAction`.
 - `fn`: The function to be called when the form is submitted or button pressed. It takes the previous state of the form (initially the `initialState` that we pass), followed by `FormData`, the argument that a `Action` usually receives.
 - `initilState` - The value you want the state it to be initially
 - `permalink (optional)` - A string containing the unique page URL that this form modifies. For use on pages with dynamic content (eg: feeds) in conjunction with progressive enhancement: it `fn` is a `serverAction` and the form is submitted before the JS bundle loads, the browser will navigate to the specified permalink URL, rather than the current page's URL.
+

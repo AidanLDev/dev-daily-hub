@@ -10,7 +10,7 @@ tags:
   - Astro
   - Hosting
 pubDate: 2023-09-01
-cover: https://devdailyhub.com/blog/deploy-your-astro-site.webp
+cover: /blog/deploy-your-astro-site.webp
 coverAlt: AstroVerse-Aliases
 author: VV
 ---

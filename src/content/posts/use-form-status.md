@@ -7,7 +7,7 @@ category:
 tags:
   - React
 pubDate: 2024-11-02
-cover: https://devdailyhub.com/blog/useFormStatus.webp
+cover: /blog/useFormStatus.webp
 coverAlt: AstroVerse-Aliases
 author: VV
 ---
@@ -75,3 +75,4 @@ const { pending, data } = useFormStatus()
 ```
 
 To really see this hook shine, you need to have a more complex form structure than the above, checkout <a href="https://youtu.be/KvO3pf-s3Sw" target="__blank">my video</a> to see how two child forms can be used within a `<form>` container.
+

@@ -7,7 +7,7 @@ category:
 tags:
   - Astro
 pubDate: 2023-09-02
-cover: https://devdailyhub.com/blog/astro-content.webp
+cover: /blog/astro-content.webp
 coverAlt: AstroVerse-Content Collections
 author: VV
 ---

@@ -7,7 +7,7 @@ category:
 tags:
   - Astro
 pubDate: 2023-09-01
-cover: https://devdailyhub.com/blog/rendering-model.webp
+cover: /blog/rendering-model.webp
 coverAlt: AstroVerse-Aliases
 author: VV
 ---

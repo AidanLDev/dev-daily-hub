@@ -7,7 +7,7 @@ category:
 tags:
   - Astro
 pubDate: 2023-09-09
-cover: https://devdailyhub.com/blog/why-choose-astro-over-another-web-framework.webp
+cover: /blog/why-choose-astro-over-another-web-framework.webp
 coverAlt: AstroVerse-Aliases
 author: VV
 ---

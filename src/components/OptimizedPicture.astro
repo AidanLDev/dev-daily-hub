@@ -1,37 +1,26 @@
 ---
-import { Picture } from 'astro:assets'
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
 
-interface Props {
-  src: string
+interface OptimizedPictureProps {
+  src: string | ImageMetadata
   alt: string
-  widths?: number[]
-  sizes?: string
-  formats?: string[]
-  fallbackFormat?: string
   class?: string
 }
 
 const {
   src,
   alt,
-  widths = [392, 700, 980, 1960],
-  sizes = `(max-width: 360px) 392px, 
-           (max-width: 720px) 700px, 
-           (max-width: 1600px) 980px, 
-           1960px`,
-  formats = ['avif'],
-  fallbackFormat = 'avif',
   class: className = 'mx-auto w-full max-w-full rounded-lg',
 } = Astro.props
+
+const isImageMetadata = typeof src !== 'string'
 ---
 
-<Picture
-  src={src}
-  alt={alt}
-  widths={widths}
-  sizes={sizes}
-  formats={formats}
-  fallbackFormat={fallbackFormat}
-  class={className}
-  inferSize
-/>
+{
+  isImageMetadata ? (
+    <Image src={src} alt={alt} class={className} />
+  ) : (
+    <img src={src} alt={alt} class={className} />
+  )
+}

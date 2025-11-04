@@ -7,7 +7,7 @@ category:
 tags:
   - Astro
 pubDate: 2023-09-04
-cover: https://devdailyhub.com/blog/editor-setup.webp
+cover: /blog/editor-setup.webp
 coverAlt: AstroVerse-Editor Setup
 author: VV
 ---

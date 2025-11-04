@@ -9,7 +9,7 @@ tags:
   - DevOps
   - Hosting
 pubDate: 2022-08-28
-cover: https://devdailyhub.com/blog/cicd-for-free.webp
+cover: /blog/cicd-for-free.webp
 coverAlt: CI CD Representation
 author: VV
 ---

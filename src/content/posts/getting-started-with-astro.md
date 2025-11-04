@@ -7,7 +7,7 @@ category:
 tags:
   - Astro
 pubDate: 2023-09-06
-cover: https://devdailyhub.com/blog/getting-started-with-astro.webp
+cover: /blog/getting-started-with-astro.webp
 coverAlt: AstroVerse-Getting Started
 author: VV
 ---

@@ -2,7 +2,7 @@
 title: 'Hosting a website for free'
 description: 'Hosting a website for free'
 pubDate: 2022-08-27
-cover: https://devdailyhub.com/blog/netlify-free-static-hosting.webp
+cover: /blog/netlify-free-static-hosting.webp
 coverAlt: 'A long room with lots of servers to the sides'
 tags:
   - DevOps

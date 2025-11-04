@@ -8,7 +8,7 @@ tags:
   - Tailwind
   - Astro
 pubDate: 2023-09-08
-cover: https://devdailyhub.com/blog/tailwind-typeography.webp
+cover: /blog/tailwind-typeography.webp
 coverAlt: AstroVerse-tailwind-typography
 author: VV
 ---

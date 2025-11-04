@@ -8,7 +8,7 @@ tags:
   - Markdown
   - Astro
 pubDate: 2023-09-06
-cover: https://devdailyhub.com/blog/markdown-style-guide.webp
+cover: /blog/markdown-style-guide.webp
 coverAlt: AstroVerse-Markdown Style Guide
 author: VV
 ---
