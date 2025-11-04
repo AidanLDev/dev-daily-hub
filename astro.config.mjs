@@ -16,11 +16,6 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: 'viewport',
   },
-
-  experimental: {
-    contentCollectionCache: true,
-  },
-
   image: {
     remotePatterns: [
       {
@@ -53,6 +48,6 @@ export default defineConfig({
       },
     }),
   ],
-  output: 'hybrid',
+  output: 'static',
   adapter: aws(),
 })
