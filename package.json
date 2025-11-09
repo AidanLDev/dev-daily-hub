@@ -6,7 +6,7 @@
     "astro": "astro",
     "build": "astro check --minimumSeverity warning && astro build",
     "deploy": "npx sst deploy --stage production",
-    "dev": "sst bind astro dev",
+    "dev": "astro dev",
     "astro:dev": "astro dev",
     "format": "prettier -w .",
     "initSst": "npx sst start",
@@ -49,3 +49,4 @@
     "vscode-html-languageservice": "5.3.1"
   }
 }
+
