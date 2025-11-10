@@ -1,7 +1,7 @@
 {
   "name": "astroverse",
   "type": "module",
-  "version": "4.8.0",
+  "version": "5.0.0",
   "scripts": {
     "astro": "astro",
     "build": "astro check --minimumSeverity warning && astro build",
