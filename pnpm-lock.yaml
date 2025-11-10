@@ -12,7 +12,7 @@ importers:
         specifier: ^0.9.5
         version: 0.9.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)
       '@astrojs/mdx':
-        specifier: ^4.3.9
+        specifier: ^4.3.10
         version: 4.3.10(astro@5.15.4(@types/node@24.10.0)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))
       '@astrojs/partytown':
         specifier: ^2.1.4
@@ -27,16 +27,16 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2(astro@5.15.4(@types/node@24.10.0)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))(tailwindcss@3.4.18(yaml@2.8.1))
       '@iconify-json/tabler':
-        specifier: ^1.2.2
+        specifier: ^1.2.23
         version: 1.2.23
       astro:
-        specifier: ^5.15.3
+        specifier: ^5.15.4
         version: 5.15.4(@types/node@24.10.0)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1)
       astro-icon:
-        specifier: ^1.1.1
+        specifier: ^1.1.5
         version: 1.1.5
       astro-pagefind:
-        specifier: ^1.6.0
+        specifier: ^1.8.5
         version: 1.8.5(astro@5.15.4(@types/node@24.10.0)(jiti@1.21.7)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))
       astro-sst:
         specifier: 3.1.4
@@ -45,26 +45,26 @@ importers:
         specifier: ^2.223.0
         version: 2.223.0(constructs@10.4.3)
       dayjs:
-        specifier: ^1.11.13
+        specifier: ^1.11.19
         version: 1.11.19
       pagefind:
-        specifier: ^1.1.1
+        specifier: ^1.4.0
         version: 1.4.0
       preline:
-        specifier: ^2.4.1
+        specifier: ^2.7.0
         version: 2.7.0
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
       sst:
-        specifier: ^3.17.21
+        specifier: ^3.17.23
         version: 3.17.23
       tailwindcss:
-        specifier: ^3.4.14
+        specifier: ^3.4.18
         version: 3.4.18(yaml@2.8.1)
     devDependencies:
       '@tailwindcss/typography':
-        specifier: ^0.5.15
+        specifier: ^0.5.19
         version: 0.5.19(tailwindcss@3.4.18(yaml@2.8.1))
       constructs:
         specifier: 10.4.3
@@ -79,10 +79,10 @@ importers:
         specifier: ^0.7.1
         version: 0.7.1(prettier-plugin-astro@0.14.1)(prettier@3.6.2)
       sst-linux-x64:
-        specifier: ^3.17.3
+        specifier: ^3.17.23
         version: 3.17.23
       typescript:
-        specifier: ^5.6.3
+        specifier: ^5.9.3
         version: 5.9.3
 
 packages:
