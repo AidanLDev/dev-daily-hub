@@ -2,6 +2,11 @@
   "name": "astroverse",
   "type": "module",
   "version": "5.0.0",
+  "author": "Aidan Lowson <dev@aidanlowson.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AidanLDev/dev-daily-hub.git"
+  },
   "scripts": {
     "astro": "astro",
     "build": "astro check --minimumSeverity warning && astro build",
@@ -49,3 +54,4 @@
     "vscode-html-languageservice": "5.3.1"
   }
 }
+
