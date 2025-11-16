@@ -11,10 +11,13 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    // Try pnpm if available, otherwise fall back to npm
-    command: 'sh -c "command -v pnpm >/dev/null 2>&1 && pnpm dev || npm run dev"',
+    // Try pnpm if available, otherwise fall back to npm.
+    // Pass the port to the dev script so the server listens on the configured baseURL.
+    command:
+      'sh -c "command -v pnpm >/dev/null 2>&1 && pnpm dev -- --port 4322 || npm run dev -- --port 4322"',
     url: 'http://localhost:4322',
-    reuseExistingServer: true,
+    // Reuse an existing server during local development, but make sure CI always starts a fresh one.
+    reuseExistingServer: process.env.CI ? false : true,
     timeout: 120_000,
   },
 })
