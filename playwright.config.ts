@@ -14,7 +14,7 @@ export default defineConfig({
     // In CI run a production preview (build -> preview). Locally run the dev server.
     // Call astro CLI directly with --port flag to ensure it listens on the configured baseURL.
     command: process.env.CI
-      ? 'pnpm run build && pnpm exec astro preview --port 4322'
+      ? 'pnpm exec astro build && pnpm exec astro preview --port 4322'
       : 'pnpm exec astro dev --port 4322',
     url: 'http://localhost:4322',
     // Reuse an existing server during local development, but make sure CI always starts a fresh one.
