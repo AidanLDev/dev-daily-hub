@@ -11,13 +11,14 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    // Try pnpm if available, otherwise fall back to npm.
-    // Pass the port to the dev script so the server listens on the configured baseURL.
-    command:
-      'sh -c "command -v pnpm >/dev/null 2>&1 && pnpm dev -- --port 4322 || npm run dev -- --port 4322"',
+    // In CI run a production preview (build -> preview). Locally run the dev server.
+    // Call astro CLI directly with --port flag to ensure it listens on the configured baseURL.
+    command: process.env.CI
+      ? 'pnpm run build && pnpm exec astro preview --port 4322'
+      : 'pnpm exec astro dev --port 4322',
     url: 'http://localhost:4322',
     // Reuse an existing server during local development, but make sure CI always starts a fresh one.
-    reuseExistingServer: process.env.CI ? false : true,
+    reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },
 })
