@@ -39,9 +39,7 @@ Since Astro v3.0, the returned `Response` object doesn't have to include the `en
 
 ```ts title="src/pages/astro-logo.png.ts" {3}
 export async function GET({ params, request }) {
-  const response = await fetch(
-    'https://docs.astro.build/assets/full-logo-light.png',
-  )
+  const response = await fetch('https://docs.astro.build/assets/full-logo-light.png')
   return new Response(await response.arrayBuffer())
 }
 ```
@@ -143,9 +141,7 @@ In SSR mode, certain providers require the `Content-Type` header to return an im
 
 ```ts title="src/pages/astro-logo.png.ts"
 export async function GET({ params, request }) {
-  const response = await fetch(
-    'https://docs.astro.build/assets/full-logo-light.png',
-  )
+  const response = await fetch('https://docs.astro.build/assets/full-logo-light.png')
   const buffer = Buffer.from(await response.arrayBuffer())
   return new Response(buffer, {
     headers: { 'Content-Type': 'image/png' },

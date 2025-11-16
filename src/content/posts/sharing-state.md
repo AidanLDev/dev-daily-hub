@@ -802,10 +802,7 @@ export default function CartFlyout() {
 <template>
   <aside v-if="$isCartOpen">
     <ul v-if="Object.values($cartItems).length">
-      <li
-        v-for="cartItem in Object.values($cartItems)"
-        v-bind:key="cartItem.name"
-      >
+      <li v-for="cartItem in Object.values($cartItems)" v-bind:key="cartItem.name">
         <img :src="cartItem.imageSrc" :alt="cartItem.name" />
         <h3>{{ cartItem.name }}</h3>
         <p>Quantity: {{ cartItem.quantity }}</p>

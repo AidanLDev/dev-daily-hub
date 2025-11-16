@@ -1,13 +1,11 @@
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
-import { SITE_TITLE, SITE_DESCRIPTION } from "@consts";
+import rss from '@astrojs/rss'
+import { getCollection } from 'astro:content'
+import { SITE_TITLE, SITE_DESCRIPTION } from '@consts'
 
 export async function GET(context) {
-  let posts = await getCollection("posts");
+  let posts = await getCollection('posts')
 
-  posts = posts
-    .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
-    .slice(0, 3);
+  posts = posts.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)).slice(0, 3)
 
   return rss({
     title: SITE_TITLE,
@@ -23,5 +21,5 @@ export async function GET(context) {
       content: post.body,
       customData: post.data.customData,
     })),
-  });
+  })
 }

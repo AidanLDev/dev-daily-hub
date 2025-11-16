@@ -24,4 +24,3 @@ Closes # (issue number) or relates to #
 ### Additional notes
 
 Add any other context about the change here.
-

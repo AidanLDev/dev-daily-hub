@@ -1,18 +1,7 @@
 ---
 import { Image } from 'astro:assets'
-import type { ImageMetadata } from 'astro'
 
-interface OptimizedPictureProps {
-  src: string | ImageMetadata
-  alt: string
-  class?: string
-}
-
-const {
-  src,
-  alt,
-  class: className = 'mx-auto w-full max-w-full rounded-lg',
-} = Astro.props
+const { src, alt, class: className = 'mx-auto w-full max-w-full rounded-lg' } = Astro.props
 
 const isImageMetadata = typeof src !== 'string'
 ---

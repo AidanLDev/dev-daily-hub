@@ -190,8 +190,7 @@ Astro.props = {
   ],
 
   /** Available in Markdown only */
-  rawContent: () =>
-    '# Astro 0.18 Release\nA little over a month ago, the first public beta [...]',
+  rawContent: () => '# Astro 0.18 Release\nA little over a month ago, the first public beta [...]',
   compiledContent: () =>
     '<h1>Astro 0.18 Release</h1>\n<p>A little over a month ago, the first public beta [...]</p>',
 }

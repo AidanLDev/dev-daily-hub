@@ -30,16 +30,13 @@ import TextInput from '../TextInput'
 function Submit() {
   const status = useFormStatus()
   return (
-    <button disabled={status.pending} type="submit">
+    <button disabled={status.pending} type='submit'>
             Submit    {' '}
     </button>
   )
 }
 
-async function submitUser(
-  prevState: Record<string, string>,
-  formData: FormData,
-) {
+async function submitUser(prevState: Record<string, string>, formData: FormData) {
   const name = formData.get('name') as string
   const email = formData.get('email') as string
 
@@ -60,8 +57,8 @@ export default function FormStatus() {
 
   return (
     <form action={formAction}>
-            <TextInput id="name" label="Name" />
-            <TextInput id="email" label="Email" />
+            <TextInput id='name' label='Name' />
+            <TextInput id='email' label='Email' />
             <Submit />   {' '}
     </form>
   )
@@ -75,4 +72,3 @@ const { pending, data } = useFormStatus()
 ```
 
 To really see this hook shine, you need to have a more complex form structure than the above, checkout <a href="https://youtu.be/KvO3pf-s3Sw" target="__blank">my video</a> to see how two child forms can be used within a `<form>` container.
-

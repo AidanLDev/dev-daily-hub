@@ -237,12 +237,8 @@ These links will open up in the current window. To open them in a new tab we'll 
 
 ```html
 <div class="flex flex-col gap-4">
-  <a href="https://aidanlowson.com" target="_blank"
-    >Here is a link to my portfolio</a
-  >
-  <a href="https://freeqrgen.net" target="_blank"
-    >A link to my freeqrgen project</a
-  >
+  <a href="https://aidanlowson.com" target="_blank">Here is a link to my portfolio</a>
+  <a href="https://freeqrgen.net" target="_blank">A link to my freeqrgen project</a>
   <a href="https://google.com" target="_blank">Google</a>
 </div>
 ```

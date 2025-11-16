@@ -17,4 +17,3 @@ List any alternative solutions or approaches you considered.
 
 **Additional context / Mockups**
 Add any other context, mockups, or links.
-

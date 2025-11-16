@@ -23,4 +23,3 @@ If you experience or witness unacceptable behavior, please contact the project o
 The maintainers will treat reports confidentially and respond promptly. Consequences for violations may include removal of content, temporary or permanent bans from the project, or other actions as appropriate.
 
 For the full Contributor Covenant text, see: https://www.contributor-covenant.org/version/2/1/code_of_conduct/
-

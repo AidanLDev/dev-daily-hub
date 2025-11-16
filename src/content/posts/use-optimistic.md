@@ -44,8 +44,8 @@ export default function Optimistic() {
         <div key={idx}>{message}</div>
       ))}
       <form action={formAction}>
-                <TextInput id="message" label="Message" />
-        <button type="submit">Send Message</button>
+                <TextInput id='message' label='Message' />
+        <button type='submit'>Send Message</button>
       </form>
     </div>
   )
@@ -57,4 +57,3 @@ As you can see from the example above, the use case for this could be an instant
 An example of how you could show different states between the local state and the server state is what WhatsApp do with the ticks, they will display 1 tick for sent and 2 for delivered.
 
 [Learn more](https://vercel.com/blog/whats-new-in-react-19)
-

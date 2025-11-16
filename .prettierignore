@@ -1,0 +1,16 @@
+node_modules
+.sst
+.astro
+.out
+dist
+build
+coverage
+playwright-report
+test-results
+public/sitemap*.xml
+pnpm-lock.yaml
+.env
+.env.local
+.env.development
+.env.test
+.env.production

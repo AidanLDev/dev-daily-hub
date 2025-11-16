@@ -53,4 +53,3 @@ As it stands, 2025-11-03 here is my current LC profile:
 I’m excited to keep learning algorithms, improve my problem solving, and join the biweekly competition whenever I can, my next goal is to get into the top 10%. Day to day, I notice that I reach solutions much faster and have more approaches at my disposal than before this LeetCode grind.
 
 Check out my [LeetCode profile](https://leetcode.com/AidanLDev/), read more on [Dev Daily Hub](https://devdailyhub.com/), and connect with me on [LinkedIn](https://www.linkedin.com/in/aidanlowson1/). Good luck on your DSA journey, I’d love to hear how you first got into it.
-

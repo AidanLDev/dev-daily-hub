@@ -43,4 +43,3 @@ If you're using TypeScript you also need to update the types. Once React 9s is r
 ```
 
 [For more info on upgrading to React 19](https://react.dev/blog/2024/04/25/react-19-upgrade-guide)
-

@@ -41,4 +41,3 @@ Code of Conduct
 - By participating you agree to follow `CODE_OF_CONDUCT.md`. To report a serious issue privately, contact the project owner at `dev@aidanlowson.com`.
 
 Thanks for helping improve Dev Daily Hub — your contributions are appreciated!
-

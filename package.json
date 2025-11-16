@@ -1,5 +1,5 @@
 {
-  "name": "astroverse",
+  "name": "dev-daily-hub",
   "type": "module",
   "version": "5.0.0",
   "author": "Aidan Lowson <dev@aidanlowson.com>",
@@ -13,8 +13,10 @@
     "deploy": "npx sst deploy --stage production",
     "dev": "astro dev",
     "astro:dev": "astro dev",
-    "format": "prettier -w .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "initSst": "npx sst start",
+    "lint": "eslint --ext .js,.ts,.astro src",
     "preview": "astro preview",
     "sst:dev": "sst dev",
     "sst:remove": "sst remove --stage production",
@@ -43,7 +45,14 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "astro-eslint-parser": "^1.2.2",
     "constructs": "10.4.3",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^1.5.0",
+    "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.1",
@@ -52,6 +61,20 @@
   },
   "overrides": {
     "vscode-html-languageservice": "5.3.1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "printWidth": 100,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "lf"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,md}": "prettier --write",
+    "**/*.d.ts": "prettier --write"
   }
 }
-
