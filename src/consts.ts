@@ -15,7 +15,7 @@ export const Tags_DESCRIPTION =
 // Tags Page Metadata, src/pages/tags/[tag]/[page].astro
 export function getTagMetadata(tag: string) {
   return {
-    title: `All articles on '${tag}' tag in AstroVerse`,
+    title: `All articles on '${tag}' tag in dev`,
     description: `Explore articles about ${tag} for different perspectives and in-depth analysis.`,
   }
 }

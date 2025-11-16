@@ -1,7 +1,7 @@
 ---
-import Link from '@components/Links.astro';
-import { Icon } from 'astro-icon/components';
-import { SITE_TITLE, HeaderLinks } from '@consts';
+import Link from '@components/Links.astro'
+import { Icon } from 'astro-icon/components'
+import { SITE_TITLE, HeaderLinks } from '@consts'
 ---
 
 <header class='z-50 flex w-full flex-wrap py-7 md:flex-nowrap md:justify-start'>
@@ -13,15 +13,13 @@ import { SITE_TITLE, HeaderLinks } from '@consts';
       <a
         class='flex-none text-xl font-semibold text-neutral-900 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200'
         href='/'
-        aria-label='Astroverse'
+        aria-label='Dev Daily Hub'
       >
         {SITE_TITLE}
       </a>
     </div>
 
-    <div
-      class='ms-auto flex items-center gap-x-2 py-1 md:order-3 md:col-span-3 md:ps-6'
-    >
+    <div class='ms-auto flex items-center gap-x-2 py-1 md:order-3 md:col-span-3 md:ps-6'>
       <!-- <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent text-black hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 transition disabled:opacity-50 disabled:pointer-events-none" onclick="window.location.href='/search/'">
         <Icon name="tabler:search" class="icon-base" />
       </button> -->
@@ -49,10 +47,7 @@ import { SITE_TITLE, HeaderLinks } from '@consts';
           aria-controls='navbar-collapse-with-animation'
           aria-label='Toggle navigation'
         >
-          <Icon
-            name='tabler:menu-2'
-            class='size-4 flex-shrink-0 hs-collapse-open:hidden'
-          />
+          <Icon name='tabler:menu-2' class='size-4 flex-shrink-0 hs-collapse-open:hidden' />
           <Icon
             name='tabler:menu-order'
             class='hidden size-4 flex-shrink-0 hs-collapse-open:block'
