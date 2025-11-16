@@ -1,12 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 
-const {
-  src,
-  alt,
-  class: className = 'mx-auto w-full max-w-full rounded-lg',
-} = Astro.props
-// testing if husky formats this file or not
+const { src, alt, class: className = 'mx-auto w-full max-w-full rounded-lg' } = Astro.props
 
 const isImageMetadata = typeof src !== 'string'
 ---
