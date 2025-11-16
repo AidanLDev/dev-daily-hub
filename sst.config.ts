@@ -1,7 +1,7 @@
 /// <reference path="./.sst/platform/config.d.ts" />
 
 export default $config({
-  app(input) {
+  app() {
     return {
       name: 'dev-daily-hub',
       removal: 'remove', // input?.stage === 'production' ? 'retain' : 'remove',
