@@ -61,3 +61,9 @@ jobs:
 
       - name: SST Deploy
         run: npx sst deploy --stage production --yes
+
+      - name: Delete merged branch
+        if: github.head_ref != ''
+        run: gh branch delete "${{ github.head_ref }}" --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
