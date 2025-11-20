@@ -17,7 +17,6 @@ const basePath = '/page'
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <button id="error-button">Throw test error</button>
   <div class="grid grid-cols-1">
     <div class="col-span-1 mb-4">
       {firstPagePosts.length > 0 && <HeroCard post={firstPagePosts[0]} />}
@@ -41,12 +40,3 @@ const basePath = '/page'
     maxDisplayedPages={5}
   />
 </BaseLayout>
-<script>
-  function handleClick() {
-    throw new Error('This is a test error')
-  }
-  const errorButton = document.querySelector('#error-button')
-  if (errorButton) {
-    errorButton.addEventListener('click', handleClick)
-  }
-</script>
