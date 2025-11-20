@@ -1,27 +1,22 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import PostCard from "@components/CommonCard.astro";
-import Pagination from "@components/Pagination.astro";
-import { getCategoryMetadata } from "@consts";
+import { getCollection } from 'astro:content'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import PostCard from '@components/CommonCard.astro'
+import Pagination from '@components/Pagination.astro'
+import { getCategoryMetadata } from '@consts'
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection("posts");
-  const uniqueCategory = [
-    ...new Set(allPosts.map((post) => post.data.category).flat()),
-  ];
+  const allPosts = await getCollection('posts')
+  const uniqueCategory = [...new Set(allPosts.map((post) => post.data.category).flat())]
 
   return uniqueCategory.flatMap((category) => {
-    const filteredPosts = allPosts.filter((post) =>
-      post.data.category.includes(category),
-    );
+    const filteredPosts = allPosts.filter((post) => post.data.category.includes(category))
     filteredPosts.sort(
-      (a, b) =>
-        new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
-    );
+      (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+    )
 
-    const pageSize = 12;
-    const totalPages = Math.ceil(filteredPosts.length / pageSize);
+    const pageSize = 12
+    const totalPages = Math.ceil(filteredPosts.length / pageSize)
 
     return Array.from({ length: totalPages }, (_, index) => ({
       params: { category, page: (index + 1).toString() },
@@ -32,13 +27,13 @@ export async function getStaticPaths() {
           lastPage: totalPages,
         },
       },
-    }));
-  });
+    }))
+  })
 }
 
-const params = Astro.params;
-const { page } = Astro.props;
-const { title, description } = getCategoryMetadata(params.category);
+const params = Astro.params
+const { page } = Astro.props
+const { title, description } = getCategoryMetadata(params.category)
 ---
 
 <BaseLayout title={title} description={description}>
@@ -49,9 +44,7 @@ const { title, description } = getCategoryMetadata(params.category);
   <Pagination
     currentPage={page.currentPage}
     lastPage={page.lastPage}
-    urlPrev={page.currentPage > 1
-      ? `/category/${params.category}/${page.currentPage - 1}`
-      : null}
+    urlPrev={page.currentPage > 1 ? `/category/${params.category}/${page.currentPage - 1}` : null}
     urlNext={page.currentPage < page.lastPage
       ? `/category/${params.category}/${page.currentPage + 1}`
       : null}

@@ -8,6 +8,8 @@ import icon from 'astro-icon'
 import tailwind from '@astrojs/tailwind'
 import aws from 'astro-sst'
 
+import sentry from '@sentry/astro'
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://devdailyhub.com',
@@ -34,18 +36,21 @@ export default defineConfig({
     sitemap(),
     pagefind(),
     tailwind(),
-
     partytown({
       config: {
         forward: ['dataLayer.push'],
         debug: false,
       },
     }),
-
     icon({
       include: {
         tabler: ['*'],
       },
+    }),
+    sentry({
+      project: 'dev-daily-hub',
+      org: 'processvision',
+      authToken: process.env.SENTRY_AUTH_TOKEN,
     }),
   ],
   output: 'static',

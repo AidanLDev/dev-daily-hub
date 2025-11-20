@@ -10,31 +10,18 @@ export interface Props {
   maxDisplayedPages: number
 }
 
-const {
-  currentPage,
-  lastPage,
-  urlPrev,
-  urlNext,
-  basePath,
-  maxDisplayedPages = 5,
-} = Astro.props
+const { currentPage, lastPage, urlPrev, urlNext, basePath, maxDisplayedPages = 5 } = Astro.props
 
 const startPage = Math.max(
   1,
-  Math.min(
-    currentPage - Math.floor(maxDisplayedPages / 2),
-    lastPage - maxDisplayedPages + 1
-  )
+  Math.min(currentPage - Math.floor(maxDisplayedPages / 2), lastPage - maxDisplayedPages + 1),
 )
 const endPage = Math.min(lastPage, startPage + maxDisplayedPages - 1)
 
 const computedBasePath = basePath ? basePath : '/page'
 ---
 
-<nav
-  class="mt-8 flex items-center justify-center gap-x-1"
-  aria-label="Pagination"
->
+<nav class="mt-8 flex items-center justify-center gap-x-1" aria-label="Pagination">
   {
     urlPrev ? (
       <a

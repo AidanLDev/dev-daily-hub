@@ -187,13 +187,13 @@ For Svelte and Vue these slots can be referenced using a `<slot>` element with t
 // src/components/MySidebar.svelte
 <aside>
   <header>
-    <slot name='title' />
+    <slot name="title" />
   </header>
   <main>
     <slot />
   </main>
   <footer>
-    <slot name='social-links' />
+    <slot name="social-links" />
   </footer>
 </aside>
 ```

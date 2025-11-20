@@ -160,8 +160,10 @@ Astro component syntax is a superset of HTML. It was designed to feel familiar t
 In Astro, you use the standard `kebab-case` format for all HTML attributes instead of the `camelCase` used in JSX. This even works for `class`, which is not supported by React.
 
 ```jsx del={1} ins={2} title="example.astro"
-<div className="box" dataValue="3" />
-<div class="box" data-value="3" />
+<>
+  <div className="box" dataValue="3" />
+  <div class="box" data-value="3" />
+</>
 ```
 
 #### Multiple Elements
@@ -186,9 +188,7 @@ In Astro, you can use standard HTML comments or JavaScript-style comments.
 
 ---
 
-<!-- HTML comment syntax is valid in .astro files -->{
-  /* JS comment syntax is also valid */
-}
+<!-- HTML comment syntax is valid in .astro files -->{/* JS comment syntax is also valid */}
 ```
 
 :::caution

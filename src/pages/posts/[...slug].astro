@@ -24,11 +24,7 @@ const { Content } = await post.render()
         <h1>{post.data.title}</h1>
       </div>
       <div>
-        {
-          post.data.cover && (
-            <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
-          )
-        }
+        {post.data.cover && <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />}
       </div>
       <div>
         <Content />
@@ -54,10 +50,7 @@ const { Content } = await post.render()
       </div>
     </article>
     <div class="mt-4">
-      <RelatedPostsCard
-        currentCategory={post.data.category[0]}
-        currentSlug={post.slug}
-      />
+      <RelatedPostsCard currentCategory={post.data.category[0]} currentSlug={post.slug} />
     </div>
   </main>
 </BaseLayout>

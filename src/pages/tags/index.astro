@@ -1,22 +1,22 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import { Tags_TITLE, Tags_DESCRIPTION } from "@consts";
+import { getCollection } from 'astro:content'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { Tags_TITLE, Tags_DESCRIPTION } from '@consts'
 
-const allPosts = await getCollection("posts");
+const allPosts = await getCollection('posts')
 
-let tagCounts: { [key: string]: number } = {};
+let tagCounts: { [key: string]: number } = {}
 allPosts.forEach((post) => {
-  (post.data.tags || []).forEach((tag) => {
+  ;(post.data.tags || []).forEach((tag) => {
     if (tag in tagCounts) {
-      tagCounts[tag] += 1;
+      tagCounts[tag] += 1
     } else {
-      tagCounts[tag] = 1;
+      tagCounts[tag] = 1
     }
-  });
-});
+  })
+})
 
-const tags = Object.keys(tagCounts);
+const tags = Object.keys(tagCounts)
 ---
 
 <BaseLayout title={Tags_TITLE} description={Tags_DESCRIPTION}>

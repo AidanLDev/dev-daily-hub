@@ -1,29 +1,20 @@
 ---
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
-import OptimizedCover from "@components/OptimizedPicture.astro";
-import FormattedDate from "@components/FormattedDate.astro";
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+import OptimizedCover from '@components/OptimizedPicture.astro'
+import FormattedDate from '@components/FormattedDate.astro'
 
-const { currentCategory, currentSlug } = Astro.props;
+const { currentCategory, currentSlug } = Astro.props
 
-async function getRelatedArticlesByCategory(): Promise<
-  CollectionEntry<"posts">[]
-> {
-  const allPosts = await getCollection("posts");
+async function getRelatedArticlesByCategory(): Promise<CollectionEntry<'posts'>[]> {
+  const allPosts = await getCollection('posts')
   return allPosts
-    .filter(
-      (post) =>
-        post.data.category.includes(currentCategory) &&
-        post.slug !== currentSlug,
-    )
-    .sort(
-      (a, b) =>
-        new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
-    )
-    .slice(0, 3);
+    .filter((post) => post.data.category.includes(currentCategory) && post.slug !== currentSlug)
+    .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+    .slice(0, 3)
 }
 
-const relatedPosts = await getRelatedArticlesByCategory();
+const relatedPosts = await getRelatedArticlesByCategory()
 ---
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -34,7 +25,7 @@ const relatedPosts = await getRelatedArticlesByCategory();
           <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
           <div class="absolute bottom-0 end-0 start-0 bg-gradient-to-t p-4 md:p-5">
             <div class="mt-16 flex items-center gap-4 text-xs text-white">
-              <span>{post.data.tags.join(" ")}</span>
+              <span>{post.data.tags.join(' ')}</span>
               <FormattedDate date={post.data.pubDate} />
             </div>
             <h2 class="mt-2 text-lg font-bold text-white">{post.data.title}</h2>

@@ -53,7 +53,7 @@ import { QRCodeSVG } from 'qrcode.react'
 
 export default function QrCode() {
   return (
-    <QrCode value='https://http://devdailyhub.com/' size={128} bgColor={'#FFF'} fgColor={'#000'} />
+    <QrCode value="https://http://devdailyhub.com/" size={128} bgColor={'#FFF'} fgColor={'#000'} />
   )
 }
 ```
@@ -65,8 +65,8 @@ import QrCode from './QrCode' // <--- Make this path point to wherever you saved
 
 export default function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
+    <div className="App">
+      <header className="App-header">
         <h1>Amazing QR Gen App</h1>
       </header>
       {/* some other random content that's top notch */}
@@ -104,7 +104,7 @@ In `App.tsx`:
 ```tsx
 
 export default function App() {
-  import { useState }, React from "react"
+  import { useState } React from "react"
 
   const [url, setUrl] = useState('');
   const [size, setSize] = useState(128);
@@ -203,28 +203,28 @@ export default function QrConfigForm({
   setFgColour,
 }: IQrConfigForm) {
   return (
-    <div className='qr-config-form-container'>
-      <TextInput<string> id='url' label='QR URL' setValue={setUrl} value={url} />
+    <div className="qr-config-form-container">
+      <TextInput<string> id="url" label="QR URL" setValue={setUrl} value={url} />
       <TextInput<number>
-        id='size'
-        label='QR Size'
+        id="size"
+        label="QR Size"
         setValue={setSize}
         value={size}
-        type='number'
+        type="number"
         min={1}
         max={10000}
       />
       <TextInput<string>
-        id='background-colour'
+        id="background-colour"
         value={bgColour}
         setValue={setBgColour}
-        label='Background Colour'
+        label="Background Colour"
       />
       <TextInput<string>
-        id='foreground-colour'
+        id="foreground-colour"
         value={fgColour}
         setValue={setFgColour}
-        label='Foreground Colour'
+        label="Foreground Colour"
       />
     </div>
   )

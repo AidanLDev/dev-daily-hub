@@ -33,6 +33,7 @@
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
     "@iconify-json/tabler": "^1.2.23",
+    "@sentry/astro": "^10.26.0",
     "astro": "^5.15.8",
     "astro-icon": "^1.1.5",
     "astro-pagefind": "^1.8.5",
