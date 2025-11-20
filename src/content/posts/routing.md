@@ -19,7 +19,7 @@ Astro uses **file-based routing** to generate your build URLs based on the file 
 Astro uses standard HTML [`<a>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) to navigate between routes. There is no framework-specific `<Link>` component provided.
 
 ```astro title="src/pages/index.astro"
-<p>Read more <a href="/about">about</a> Astro!</p>
+<p>Read more <a href='/about'>about</a> Astro!</p>
 ```
 
 ## Static routes
@@ -74,10 +74,7 @@ The filename can include multiple parameters, which must all be included in the 
 ```astro title="src/pages/[lang]-[version]/info.astro"
 ---
 export function getStaticPaths() {
-  return [
-    { params: { lang: 'en', version: 'v1' } },
-    { params: { lang: 'fr', version: 'v2' } },
-  ]
+  return [{ params: { lang: 'en', version: 'v1' } }, { params: { lang: 'fr', version: 'v2' } }]
 }
 
 const { lang, version } = Astro.params
@@ -460,9 +457,7 @@ export async function getStaticPaths({ paginate }) {
   // Make sure that you pass `{params: {tag}}` to `paginate()`
   // so that Astro knows which tag grouping the result is for.
   return allTags.flatMap((tag) => {
-    const filteredPosts = allPosts.filter(
-      (post) => post.frontmatter.tag === tag,
-    )
+    const filteredPosts = allPosts.filter((post) => post.frontmatter.tag === tag)
     return paginate(filteredPosts, {
       params: { tag },
       pageSize: 10,

@@ -17,3 +17,8 @@ pnpm-lock.yaml
 package.json
 deploy.yml
 ci.yml
+# Exclude markdown files to avoid formatting code examples
+*.md
+*.mdx
+# Exclude BaseHead.astro - prettier-plugin-astro has parsing issues with this file
+src/components/BaseHead.astro
