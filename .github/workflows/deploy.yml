@@ -21,6 +21,14 @@ jobs:
       - name: Install pnpm
         run: npm i -g pnpm
 
+      - name: Force Git to use HTTPS for github.com
+        # some packages in the pnpm lockfile reference git@github.com:... which
+        # fails in Actions (no SSH key). Configure git to rewrite SSH-style
+        # URLs to HTTPS so clones succeed without SSH keys.
+        run: |
+          git config --global url."https://github.com/".insteadOf "git@github.com:"
+          git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
+
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
