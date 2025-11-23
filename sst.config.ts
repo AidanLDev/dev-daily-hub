@@ -13,6 +13,10 @@ export default $config({
     new sst.aws.Astro('dev_daily_hub', {
       domain: { name: 'devdailyhub.com', redirects: ['www.devdailyhub.com'] },
       buildCommand: 'astro check --minimumSeverity warning && astro build',
+      environment: {
+        SENTRY_DNS: process.env.SENTRY_DNS!,
+        PUBLIC_SENTRY_DNS: process.env.PUBLIC_SENTRY_DNS!,
+      },
     })
   },
 })
