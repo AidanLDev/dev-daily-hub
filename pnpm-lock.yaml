@@ -109,8 +109,8 @@ importers:
         specifier: ^0.7.1
         version: 0.7.1(prettier-plugin-astro@0.14.1)(prettier@3.6.2)
       sst-linux-x64:
-        specifier: ^3.17.23
-        version: 3.17.23
+        specifier: ^3.17.24
+        version: 3.17.24
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -282,8 +282,8 @@ packages:
   '@emmetio/css-abbreviation@2.1.8':
     resolution: {integrity: sha512-s9yjhJ6saOO/uk1V74eifykk2CBYi01STTK3WlXWGOepyKa23ymJ053+DNQjpFcy1ingpaO7AxCcwLvHFY9tuw==}
 
-  '@emmetio/css-parser@git+https://github.com/ramya-rao-a/css-parser.git#370c480ac103bd17c7bcfb34bf5d577dc40d3660':
-    resolution: {commit: 370c480ac103bd17c7bcfb34bf5d577dc40d3660, repo: https://github.com/ramya-rao-a/css-parser.git, type: git}
+  '@emmetio/css-parser@https://codeload.github.com/ramya-rao-a/css-parser/tar.gz/370c480ac103bd17c7bcfb34bf5d577dc40d3660':
+    resolution: {tarball: https://codeload.github.com/ramya-rao-a/css-parser/tar.gz/370c480ac103bd17c7bcfb34bf5d577dc40d3660}
     version: 0.4.0
 
   '@emmetio/html-matcher@1.3.0':
@@ -3659,6 +3659,11 @@ packages:
     cpu: [x64]
     os: [linux]
 
+  sst-linux-x64@3.17.24:
+    resolution: {integrity: sha512-tLXbXUCaTC2Zqh7GGa13v/lisV8h/UJ25wsgfjGotf2wmlUfRRpnHJ+MdJv7RIET15N50iq97c+p4QKg8TvQhQ==}
+    cpu: [x64]
+    os: [linux]
+
   sst-linux-x86@3.17.23:
     resolution: {integrity: sha512-aGmUujIvoNlmAABEGsOgfY1rxD9koC6hN8bnTLbDI+oI/u/zjHYh50jsbL0p3TlaHpwF/lxP3xFSuT6IKp+KgA==}
     cpu: [x86]
@@ -4585,7 +4590,7 @@ snapshots:
     dependencies:
       '@emmetio/scanner': 1.0.4
 
-  '@emmetio/css-parser@git+https://github.com/ramya-rao-a/css-parser.git#370c480ac103bd17c7bcfb34bf5d577dc40d3660':
+  '@emmetio/css-parser@https://codeload.github.com/ramya-rao-a/css-parser/tar.gz/370c480ac103bd17c7bcfb34bf5d577dc40d3660':
     dependencies:
       '@emmetio/stream-reader': 2.2.0
       '@emmetio/stream-reader-utils': 0.1.0
@@ -8591,7 +8596,10 @@ snapshots:
   sst-linux-arm64@3.17.23:
     optional: true
 
-  sst-linux-x64@3.17.23: {}
+  sst-linux-x64@3.17.23:
+    optional: true
+
+  sst-linux-x64@3.17.24: {}
 
   sst-linux-x86@3.17.23:
     optional: true
@@ -8998,7 +9006,7 @@ snapshots:
 
   volar-service-emmet@0.0.66(@volar/language-service@2.4.23):
     dependencies:
-      '@emmetio/css-parser': git+https://github.com/ramya-rao-a/css-parser.git#370c480ac103bd17c7bcfb34bf5d577dc40d3660
+      '@emmetio/css-parser': https://codeload.github.com/ramya-rao-a/css-parser/tar.gz/370c480ac103bd17c7bcfb34bf5d577dc40d3660
       '@emmetio/html-matcher': 1.3.0
       '@vscode/emmet-helper': 2.11.0
       vscode-uri: 3.1.0
