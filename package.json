@@ -50,7 +50,7 @@
     "@playwright/test": "^1.56.1",
     "@tailwindcss/typography": "^0.5.19",
     "@typescript-eslint/eslint-plugin": "^8.46.4",
-    "@typescript-eslint/parser": "^8.46.4",
+    "@typescript-eslint/parser": "^8.48.0",
     "astro-eslint-parser": "^1.2.2",
     "constructs": "10.4.3",
     "eslint": "^9.39.1",
