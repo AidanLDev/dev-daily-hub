@@ -1,29 +1,6 @@
-error: rustc 1.80.1 is not supported by the following packages:
-  aws_lambda_events@1.0.1 requires rustc 1.82.0
-  icu_collections@2.1.1 requires rustc 1.83
-  icu_locale_core@2.1.1 requires rustc 1.83
-  icu_normalizer@2.1.1 requires rustc 1.83
-  icu_normalizer_data@2.1.1 requires rustc 1.83
-  icu_normalizer_data@2.1.1 requires rustc 1.83
-  icu_normalizer_data@2.1.1 requires rustc 1.83
-  icu_properties@2.1.2 requires rustc 1.83
-  icu_properties_data@2.1.2 requires rustc 1.83
-  icu_properties_data@2.1.2 requires rustc 1.83
-  icu_properties_data@2.1.2 requires rustc 1.83
-  icu_provider@2.1.1 requires rustc 1.83
-  idna_adapter@1.2.1 requires rustc 1.82
-  lambda_http@1.0.1 requires rustc 1.82.0
-  lambda_runtime@1.0.1 requires rustc 1.82.0
-  lambda_runtime_api_client@1.0.1 requires rustc 1.82.0
-  litemap@0.8.1 requires rustc 1.82
-  potential_utf@0.1.4 requires rustc 1.82
-  tinystr@0.8.2 requires rustc 1.82
-  writeable@0.6.2 requires rustc 1.82
-  yoke@0.8.1 requires rustc 1.82
-  zerofrom@0.1.6 requires rustc 1.81
-  zerotrie@0.2.3 requires rustc 1.82
-  zerovec@0.11.5 requires rustc 1.82
-Either upgrade rustc or select compatible dependency versions with
-`cargo update <name>@<current-ver> --precise <compatible-ver>`
-where `<compatible-ver>` is the latest version supporting rustc 1.80.1
-
+    Updating crates.io index
+error: no matching package found
+searched package name: `tracing_subscriber`
+perhaps you meant:      tracing-subscriber
+location searched: registry `crates-io`
+required by package `dev-daily-hub v0.1.0 (C:\Users\Aidan\Repos\dev-daily-hub)`
