@@ -1,0 +1,4 @@
+error: failed to parse manifest at `C:\Users\Aidan\Repos\dev-daily-hub\Cargo.toml`
+
+Caused by:
+  binary target bin.name is required

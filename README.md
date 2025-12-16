@@ -2,40 +2,20 @@
 
 [![site-status]][site-link] [![build]][build-link] [![license]][license-link]
 
-Dev Daily Hub is an Astro-based developer blog and resource site that publishes guides, how-tos, and practical developer content. The site is built with Astro (v5) and MDX, styled with Tailwind CSS, and uses PageFind for local search. It's configured to output a static site and can be deployed via SST (Serverless Stack) / AWS.
+Dev Daily Hub is an HTMX developer blog and resource site that publishes guides, how-tos, and practical developer content. The site is built with HTMX, Rust, AWS, Terraform and styled with vanilla CSS.
 
 Quick Start
 
-- Install dependencies:
-
-```bash
-pnpm install
-```
-
-- Run development server:
-
-```bash
-pnpm dev
-```
+- TODO: Add steps here...
 
 - Build for production:
 
 ```bash
-pnpm build
+
 ```
 
-- Preview the production build locally:
+Project Structure (high level) TODO...
 
-```bash
-pnpm preview
-```
-
-Project Structure (high level)
-
-- `src/` — all site source: pages, layouts, components, and content collections.
-- `public/` — static assets (images, icons, favicons).
-- `astro.config.mjs` — Astro configuration and integrations (Tailwind, PageFind, MDX, SST adapter).
-- `package.json` — scripts and dependencies (uses `pnpm`).
 
 Contributing
 
