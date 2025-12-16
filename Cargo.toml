@@ -5,9 +5,9 @@ edition = "2021"
 
 [dependencies]
 # TODO: Check crates.io for the latest compatible versions before using.
-# tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
-# lambda_runtime = "0.7"
-# lambda_http = "0.7"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+lambda_runtime = "1.0.1"
+lambda_http = "1.0.1"
 # include_dir = "0.7"
 # pulldown-cmark = "0.10"
 # serde = { version = "1.0", features = ["derive"] }
