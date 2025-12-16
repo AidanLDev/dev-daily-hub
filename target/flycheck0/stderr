@@ -1,6 +1,0 @@
-    Updating crates.io index
-error: no matching package found
-searched package name: `tracing_subscriber`
-perhaps you meant:      tracing-subscriber
-location searched: registry `crates-io`
-required by package `dev-daily-hub v0.1.0 (C:\Users\Aidan\Repos\dev-daily-hub)`

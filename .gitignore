@@ -1,0 +1,11 @@
+.env
+.astro
+.sst
+node_modules
+dist
+.cargo/
+public/vendor
+public/_assets/
+.cache
+.playwright
+target/
