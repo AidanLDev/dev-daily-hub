@@ -8,77 +8,8 @@
     <script src="/static/htmx.min.js"></script>
   </head>
   <body>
-    <!-- Inline include of topbar for static testing -->
-    <header>
-      <nav class="topbar">
-        <div class="container">
-          <a class="brand" href="/">Dev Daily Hub</a>
-          <ul class="nav">
-            <li>
-              <a
-                href="/"
-                hx-get="/static/index.html"
-                hx-target="#main-content"
-                hx-push-url="true"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="/blogs/blog-1"
-                hx-get="/static/fragments/blog-1.html"
-                hx-target="#main-content"
-                hx-push-url="true"
-                >Blog 1</a
-              >
-            </li>
-            <li>
-              <a
-                href="/blogs/blog-2"
-                hx-get="/static/fragments/blog-2.html"
-                hx-push-url="true"
-                >Blog 2</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
     <main id="main-content" class="container">
       <h1>Welcome to Dev Daily Hub</h1>
-      <p>
-        This is a minimal HTMX-powered frontend for testing. Click the blog
-        links in the top bar to load fragments into this container.
-      </p>
-      <ul>
-        <li>
-          <a
-            hx-get="/static/fragments/blog-1.html"
-            hx-target="#main-content"
-            hx-push-url="true"
-            >Load Blog 1</a
-          >
-        </li>
-        <li>
-          <a
-            hx-get="/static/fragments/blog-2.html"
-            hx-target="#main-content"
-            hx-push-url="true"
-            >Load Blog 2</a
-          >
-        </li>
-      </ul>
     </main>
-
-    <!-- Inline include of footer for static testing -->
-    <footer class="footer">
-      <div class="container footer-content">
-        <p>© Dev Daily Hub — Built with Rust + HTMX</p>
-        <p>
-          <a href="/privacy-policy">Privacy</a> · <a href="/about">About</a>
-        </p>
-      </div>
-    </footer>
   </body>
 </html>

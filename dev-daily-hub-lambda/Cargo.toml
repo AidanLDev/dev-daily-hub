@@ -1,0 +1,12 @@
+[package]
+name = "dev-daily-hub-lambda"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+askama = "0.14.0"
+aws-sdk-s3 = "1.118.0"
+lambda_http = "1.0.1"
+lambda_runtime = "1.0.1"
+serde = { version = "1.0.228", features = ["derive"] }
+tokio = { version = "1.48.0", features = ["rt-multi-thread", "macros"] }
