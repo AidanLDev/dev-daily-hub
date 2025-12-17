@@ -1,0 +1,34 @@
+<nav class="topbar">
+  <div class="container">
+    <a class="brand" href="/">Dev Daily Hub</a>
+    <ul class="nav">
+      <li>
+        <a
+          href="/"
+          hx-get="/static/index.html"
+          hx-target="#main-content"
+          hx-push-url="true"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/blogs/blog-1"
+          hx-get="/static/fragments/blog-1.html"
+          hx-target="#main-content"
+          hx-push-url="true"
+          >Blog 1</a
+        >
+      </li>
+      <li>
+        <a
+          href="/blogs/blog-2"
+          hx-get="/static/fragments/blog-2.html"
+          hx-target="#main-content"
+          hx-push-url="true"
+          >Blog 2</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

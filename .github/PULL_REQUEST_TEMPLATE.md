@@ -11,7 +11,7 @@ Provide a short description of the changes in this pull request and the motivati
 
 ### Checklist
 
-- [ ] My code follows the repository's style and formatting (`pnpm format`).
+- [ ] My code follows the repository's style and formatting.
 - [ ] I have referenced related issue(s) (if applicable).
 - [ ] I have added/updated documentation if required.
 - [ ] I have run relevant checks locally.
