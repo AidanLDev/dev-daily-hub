@@ -4,4 +4,4 @@ This document describes how to run the minimal HTMX frontend locally for develop
 
 - install cargo lambda
 - run in /dev-daily-hub-lambda
-- 
+- cargo lambda watch -- --trigger http
