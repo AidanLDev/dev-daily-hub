@@ -22,10 +22,11 @@ For Windows
 winget install CargoLambda.CargoLambda
 ```
 
-<!--
-  TODO: Set-up local stack - https://app.localstack.cloud/getting-started
-  TODO: look into - Askama, Maud, or Rust-embed allow you to bake your HTML, CSS, and even small images directly into the executable
- -->
+- Run Lambda locally
+
+```bash
+cargo lambda watch
+```
 
 - Build for production:
 
