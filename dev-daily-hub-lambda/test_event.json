@@ -1,0 +1,11 @@
+{
+  "httpMethod": "GET",
+  "path": "/v2",
+  "headers": {
+    "Host": "devdailyhub.com"
+  },
+  "requestContext": {
+    "httpMethod": "GET",
+    "path": "/v2"
+  }
+}
