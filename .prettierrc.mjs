@@ -9,6 +9,7 @@ export default {
   bracketSpacing: true,
   arrowParens: 'always',
   endOfLine: 'lf',
+  tailwindStylesheet: './src/global.css',
   overrides: [
     {
       files: '*.astro',

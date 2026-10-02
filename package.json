@@ -32,9 +32,9 @@
     "@astrojs/partytown": "^2.1.8",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/tailwind": "^6.0.2",
     "@iconify-json/tabler": "^1.2.41",
     "@sentry/astro": "^11.3.0",
+    "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.5",
     "astro-icon": "^1.2.0",
     "astro-pagefind": "^2.0.1",
@@ -42,10 +42,10 @@
     "aws-cdk-lib": "^2.272.0",
     "dayjs": "^1.11.23",
     "pagefind": "^1.5.2",
-    "preline": "^2.7.0",
+    "preline": "^5.0.0",
     "sharp": "^0.35.5",
     "sst": "^4.17.1",
-    "tailwindcss": "^3.4.19"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
@@ -61,7 +61,7 @@
     "playwright": "^1.63.0",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.1.0",
-    "prettier-plugin-tailwindcss": "^0.7.2",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "sst-linux-x64": "^4.17.1",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.0"

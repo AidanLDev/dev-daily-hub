@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap'
 import partytown from '@astrojs/partytown'
 import pagefind from 'astro-pagefind'
 import icon from 'astro-icon'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import aws from 'astro-sst'
 
 import sentry from '@sentry/astro'
@@ -38,7 +38,6 @@ export default defineConfig({
     mdx(),
     sitemap(),
     pagefind(),
-    tailwind(),
     partytown({
       config: {
         forward: ['dataLayer.push'],
@@ -56,6 +55,9 @@ export default defineConfig({
       authToken: process.env.SENTRY_AUTH_TOKEN,
     }),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   output: 'static',
   adapter: aws(),
 })

@@ -1,39 +1,85 @@
-:root {
-  --dark-mode-text: rgb(163 163 163);
+@import 'tailwindcss';
+
+@import 'preline/variants.css';
+
+@plugin '@tailwindcss/typography';
+
+@source '../node_modules/preline/dist/{collapse,theme-switch}-non-auto.mjs';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-*: initial;
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-serif:
+    system-ui, -apple-system, BlinkMacSystemFont, Georgia, Cambria, Times New Roman, serif;
+  --font-mono:
+    system-ui, -apple-system, BlinkMacSystemFont, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
 }
 
-a {
-  display: inline-block; /* inline-block */
-  transition: background-color 0.2s; /* For smooth hover transition */
-  color: #ebe1e1;
-}
-a:hover {
-  color: #737373; /* hover:bg-neutral-500 */
-  text-decoration: underline;
-}
-a.dark {
-  color: #525252; /* dark:bg-neutral-600 */
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-html.dark p,
-html.dark h1,
-html.dark h2,
-html.dark h3,
-html.dark h4,
-html.dark h5,
-html.dark h6,
-html.dark ul {
-  color: var(--dark-mode-text);
-}
+/*
+  Site-wide element styles. These live in the utilities layer so they keep the
+  same precedence over Tailwind utilities (decided by specificity) that they had
+  as unlayered CSS with Tailwind CSS v3.
+*/
+@layer utilities {
+  :root {
+    --dark-mode-text: rgb(163 163 163);
+  }
 
-ul {
-  text-indent: 0.25rem;
-}
-ul li {
-  display: list-item;
-  list-style-type: circle;
-  list-style-position: inside;
-}
-ul li::marker {
-  text-indent: 2rem;
+  a {
+    display: inline-block; /* inline-block */
+    transition: background-color 0.2s; /* For smooth hover transition */
+    color: #ebe1e1;
+  }
+  a:hover {
+    color: #737373; /* hover:bg-neutral-500 */
+    text-decoration: underline;
+  }
+  a.dark {
+    color: #525252; /* dark:bg-neutral-600 */
+  }
+
+  html.dark p,
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark h4,
+  html.dark h5,
+  html.dark h6,
+  html.dark ul {
+    color: var(--dark-mode-text);
+  }
+
+  ul {
+    text-indent: 0.25rem;
+  }
+  ul li {
+    display: list-item;
+    list-style-type: circle;
+    list-style-position: inside;
+  }
+  ul li::marker {
+    text-indent: 2rem;
+  }
 }

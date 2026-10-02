@@ -43,9 +43,13 @@ const { title, description, image = '/blog-placeholder-1.avif' } = Astro.props
 <meta property='twitter:description' content={description} />
 <meta property='twitter:image' content={new URL(image, Astro.url)} />
 
-<!-- Preline CSS -->
+<!-- Preline JS -->
 <script>
-  import 'preline/dist/preline.js'
+  import HSCollapse from 'preline/plugins/collapse-non-auto'
+  import HSThemeSwitch from 'preline/plugins/theme-switch-non-auto'
+
+  HSCollapse.autoInit()
+  HSThemeSwitch.autoInit()
 </script>
 
 <!-- Google tag (gtag.js) -->

@@ -35,7 +35,7 @@ const truncatedDescription = truncateUTF8String(post.data.description, 150)
     <div class="md:w-2/3">
       <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
     </div>
-    <div class="absolute bottom-0 end-0 start-0 bg-gradient-to-t from-black p-4 md:relative md:flex md:w-1/3 md:flex-col md:justify-start md:bg-transparent md:p-5">
+    <div class="absolute bottom-0 inset-e-0 inset-s-0 bg-linear-to-t from-black p-4 md:relative md:flex md:w-1/3 md:flex-col md:justify-start md:bg-none md:p-5">
       <div class="mt-8 flex items-center gap-4 text-xs text-white dark:text-white md:text-neutral-900">
         <span>{post.data.tags.join(' ')}</span>
         <FormattedDate date={post.data.pubDate} />
