@@ -38,16 +38,18 @@ const { title, description } = getTagMetadata(params.tag)
 
 <BaseLayout title={title} description={description}>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-    {page.data.map((post) => <PostCard post={post} />)}
+    {page.data.map((post) => (
+      <PostCard post={post} />
+    ))}
   </div>
 
   <Pagination
     currentPage={page.currentPage}
     lastPage={page.lastPage}
     urlPrev={page.currentPage > 1 ? `/tags/${params.tag}/${page.currentPage - 1}` : null}
-    urlNext={page.currentPage < page.lastPage
-      ? `/tags/${params.tag}/${page.currentPage + 1}`
-      : null}
+    urlNext={
+      page.currentPage < page.lastPage ? `/tags/${params.tag}/${page.currentPage + 1}` : null
+    }
     basePath={`/tags/${params.tag}`}
     maxDisplayedPages={5}
   />

@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config'
+import { unified } from '@astrojs/markdown-remark'
 import { remarkModifiedTime } from './src/utils/remark-modified-time.mjs'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
@@ -28,7 +29,9 @@ export default defineConfig({
   },
 
   markdown: {
-    remarkPlugins: [remarkModifiedTime],
+    processor: unified({
+      remarkPlugins: [remarkModifiedTime],
+    }),
   },
 
   integrations: [
