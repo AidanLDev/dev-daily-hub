@@ -1,0 +1,9 @@
+# pnpm settings (pnpm 11 no longer reads these from .npmrc)
+shamefullyHoist: true
+strictPeerDependencies: false
+autoInstallPeers: true
+enablePrePostScripts: true
+preferOffline: true
+
+allowBuilds:
+  esbuild: true

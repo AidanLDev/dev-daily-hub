@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/AidanLDev/dev-daily-hub.git"
   },
+  "packageManager": "pnpm@11.28.3",
   "scripts": {
     "astro": "astro",
     "build": "astro check --minimumSeverity warning && astro build",
@@ -33,7 +34,7 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@iconify-json/tabler": "^1.2.41",
-    "@sentry/astro": "^11.3.0",
+    "@sentry/astro": "^11.0.0",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.5",
     "astro-icon": "^1.2.0",
