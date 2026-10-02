@@ -38,16 +38,20 @@ const { title, description } = getCategoryMetadata(params.category)
 
 <BaseLayout title={title} description={description}>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-    {page.data.map((post) => <PostCard post={post} />)}
+    {page.data.map((post) => (
+      <PostCard post={post} />
+    ))}
   </div>
 
   <Pagination
     currentPage={page.currentPage}
     lastPage={page.lastPage}
     urlPrev={page.currentPage > 1 ? `/category/${params.category}/${page.currentPage - 1}` : null}
-    urlNext={page.currentPage < page.lastPage
-      ? `/category/${params.category}/${page.currentPage + 1}`
-      : null}
+    urlNext={
+      page.currentPage < page.lastPage
+        ? `/category/${params.category}/${page.currentPage + 1}`
+        : null
+    }
     basePath={`/category/${params.category}`}
     maxDisplayedPages={5}
   />

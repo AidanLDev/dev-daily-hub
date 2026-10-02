@@ -6,10 +6,8 @@ const { src, alt, class: className = 'mx-auto w-full max-w-full rounded-lg' } = 
 const isImageMetadata = typeof src !== 'string'
 ---
 
-{
-  isImageMetadata ? (
-    <Image src={src} alt={alt} class={className} />
-  ) : (
-    <img src={src} alt={alt} class={className} />
-  )
-}
+{isImageMetadata ? (
+  <Image src={src} alt={alt} class={className} />
+) : (
+  <img src={src} alt={alt} class={className} />
+)}

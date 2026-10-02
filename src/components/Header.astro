@@ -47,11 +47,8 @@ import { SITE_TITLE, HeaderLinks } from '@consts'
           aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
         >
-          <Icon name="tabler:menu-2" class="size-4 flex-shrink-0 hs-collapse-open:hidden" />
-          <Icon
-            name="tabler:menu-order"
-            class="hidden size-4 flex-shrink-0 hs-collapse-open:block"
-          />
+          <Icon name="tabler:menu-2" class="size-4 shrink-0 hs-collapse-open:hidden" />
+          <Icon name="tabler:menu-order" class="hidden size-4 shrink-0 hs-collapse-open:block" />
         </button>
       </div>
     </div>
@@ -60,19 +57,15 @@ import { SITE_TITLE, HeaderLinks } from '@consts'
       id="navbar-collapse-with-animation"
       class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:order-2 md:col-span-6 md:block md:w-auto md:basis-auto"
     >
-      <div
-        class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-center md:gap-x-7 md:gap-y-0"
-      >
-        {
-          HeaderLinks.map((link) => (
-            <Link
-              href={link.href}
-              class="px-4 py-3 font-medium text-neutral-900 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200"
-            >
-              {link.title}
-            </Link>
-          ))
-        }
+      <div class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-center md:gap-x-7 md:gap-y-0">
+        {HeaderLinks.map((link) => (
+          <Link
+            href={link.href}
+            class="px-4 py-3 font-medium text-neutral-900 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200"
+          >
+            {link.title}
+          </Link>
+        ))}
       </div>
     </div>
   </nav>

@@ -4,15 +4,15 @@
 /* deno-fmt-ignore-file */
 /* biome-ignore-all lint: auto-generated */
 
-declare module "sst" {
+declare module 'sst' {
   export interface Resource {
-    "dev_daily_hub": {
-      "type": "sst.aws.Astro"
-      "url": string
+    dev_daily_hub: {
+      type: 'sst.aws.Astro'
+      url: string
     }
   }
 }
 /// <reference path="sst-env.d.ts" />
 
-import "sst"
+import 'sst'
 export {}
