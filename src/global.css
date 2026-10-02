@@ -50,6 +50,9 @@
   a {
     display: inline-block; /* inline-block */
     transition: background-color 0.2s; /* For smooth hover transition */
+    color: #262626; /* neutral-800 */
+  }
+  :where(html.dark) a {
     color: #ebe1e1;
   }
   a:hover {
