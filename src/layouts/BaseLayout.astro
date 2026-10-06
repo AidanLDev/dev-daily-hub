@@ -1,16 +1,18 @@
 ---
-import BaseHead from '@components/BaseHead.astro'
+import BaseHead, { type Props as HeadProps } from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 import '../global.css'
 
-const { title, description } = Astro.props
+type Props = HeadProps
+
+const headProps = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead {...headProps} />
   </head>
   <body class="mx-auto flex min-h-screen max-w-6xl flex-col px-4 dark:prose-invert dark:bg-neutral-900 sm:px-6 lg:px-8">
     <Header />

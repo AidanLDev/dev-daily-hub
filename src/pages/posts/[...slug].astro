@@ -4,6 +4,7 @@ import BaseLayout from '@layouts/BaseLayout.astro'
 import RelatedPostsCard from '@components/RelatedPostsCard.astro'
 import FormattedDate from '@components/FormattedDate.astro'
 import OptimizedCover from '@components/OptimizedPicture.astro'
+import { ogImagePath, postStructuredData, resolveAuthor } from '@utils/seo'
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts')
@@ -15,16 +16,35 @@ export async function getStaticPaths() {
 
 const post = Astro.props
 const { Content } = await render(post)
+
+const site = Astro.site ?? new URL('https://devdailyhub.com')
+const author = resolveAuthor(post.data.author)
+const updatedDate = post.data.updatedDate
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={ogImagePath(post.id)}
+  imageAlt={post.data.title}
+  article={{
+    publishedTime: post.data.pubDate,
+    modifiedTime: updatedDate,
+    authorName: author.name,
+    tags: post.data.tags,
+    section: post.data.category[0],
+  }}
+  structuredData={postStructuredData(post, site)}
+>
   <main>
     <article class="prose mx-auto dark:prose-invert">
       <div class="prose-h1 text-center">
         <h1>{post.data.title}</h1>
       </div>
       <div>
-        {post.data.cover && <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />}
+        {post.data.cover && (
+          <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} priority />
+        )}
       </div>
       <div>
         <Content />
@@ -41,8 +61,12 @@ const { Content } = await render(post)
       </div>
       <div class="flex justify-between">
         <small>
-          Publish on <FormattedDate date={post.data.pubDate} />
-          ，Update on <FormattedDate date={new Date().toISOString()} />
+          Published <FormattedDate date={post.data.pubDate} />
+          {updatedDate && (
+            <>
+              {' · '}Updated <FormattedDate date={updatedDate} />
+            </>
+          )}
         </small>
       </div>
     </article>

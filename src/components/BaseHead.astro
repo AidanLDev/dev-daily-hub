@@ -1,47 +1,144 @@
 ---
-interface Props {
+import {
+  DEFAULT_OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_LOCALE,
+  SITE_OWNER,
+  SITE_TITLE,
+  SocialLinks,
+  TWITTER_HANDLE,
+} from '@consts'
+
+export interface Props {
   title: string
   description: string
+  /** Social share image, ideally 1200x630. Defaults to the site card. */
   image?: string
+  imageAlt?: string
+  /** Use a different canonical path, e.g. when a page duplicates another */
+  canonicalPath?: string
+  /** Keep the page out of search results (404, search, etc.) */
+  noindex?: boolean
+  article?: {
+    publishedTime: Date
+    modifiedTime?: Date
+    authorName: string
+    tags: string[]
+    section?: string
+  }
+  /** Page-specific JSON-LD, added alongside the site-wide WebSite schema */
+  structuredData?: Record<string, unknown>[]
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const {
+  title,
+  description,
+  image = DEFAULT_OG_IMAGE,
+  imageAlt = SITE_TITLE,
+  canonicalPath,
+  noindex = false,
+  article,
+  structuredData = [],
+} = Astro.props
 
-const { title, description, image = '/blog-placeholder-1.avif' } = Astro.props
+const site = Astro.site ?? new URL('https://devdailyhub.com')
+const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, site)
+const imageURL = new URL(image, site)
+const fullTitle = title === SITE_TITLE ? `${SITE_TITLE}: guides and tutorials for devs` : `${title} | ${SITE_TITLE}`
+// Generated share images (src/pages/og) are always 1200x630 PNGs
+const isGeneratedImage = image.startsWith('/og/')
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': new URL('/#website', site).href,
+  name: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  url: site.href,
+  inLanguage: 'en-GB',
+  publisher: {
+    '@type': 'Person',
+    name: SITE_OWNER.name,
+    url: SITE_OWNER.url,
+    sameAs: SocialLinks.filter((link) => link.href.startsWith('http')).map((link) => link.href),
+  },
+}
 ---
 
 <!-- Global Metadata -->
-<meta charset='utf-8' />
-<meta name='viewport' content='width=device-width,initial-scale=1' />
-<link rel='icon' type='image/svg+xml' href='/favicon.ico' />
-<meta name='generator' content={Astro.generator} />
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="googlebot" content="index, follow">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)" />
 
-<!-- Canonical URL -->
-<link rel='canonical' href={canonicalURL} />
-
-<!-- Sitemap -->
-<link rel='sitemap' href='/sitemap-index.xml' />
+<!-- Icons -->
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/devdailyhubicon.png" />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name='title' content={title} />
-<meta name='description' content={description} />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+{
+  noindex ? (
+    <meta name="robots" content="noindex, follow" />
+  ) : (
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  )
+}
 
-<!-- Open Graph / Facebook -->
-<meta property='og:type' content='website' />
-<meta property='og:url' content={Astro.url} />
-<meta property='og:title' content={title} />
-<meta property='og:description' content={description} />
-<meta property='og:image' content={new URL(image, Astro.url)} />
+<!-- Feeds and sitemap -->
+<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
+<link rel="sitemap" href="/sitemap-index.xml" />
 
-<!-- Twitter -->
-<meta property='twitter:card' content='summary_large_image' />
-<meta property='twitter:url' content={Astro.url} />
-<meta property='twitter:title' content={title} />
-<meta property='twitter:description' content={description} />
-<meta property='twitter:image' content={new URL(image, Astro.url)} />
+<!-- Open Graph -->
+<meta property="og:type" content={article ? 'article' : 'website'} />
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:locale" content={SITE_LOCALE} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:image:alt" content={imageAlt} />
+{
+  isGeneratedImage && (
+    <>
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/png" />
+    </>
+  )
+}
+{
+  article && (
+    <>
+      <meta property="article:published_time" content={article.publishedTime.toISOString()} />
+      {article.modifiedTime && (
+        <meta property="article:modified_time" content={article.modifiedTime.toISOString()} />
+      )}
+      <meta property="article:author" content={article.authorName} />
+      {article.section && <meta property="article:section" content={article.section} />}
+      {article.tags.map((tag) => (
+        <meta property="article:tag" content={tag} />
+      ))}
+    </>
+  )
+}
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={TWITTER_HANDLE} />
+<meta name="twitter:creator" content={TWITTER_HANDLE} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
+<meta name="twitter:image:alt" content={imageAlt} />
+
+<!-- Structured data -->
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+{structuredData.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}
 
 <!-- Preline JS -->
 <script>
@@ -53,7 +150,10 @@ const { title, description, image = '/blog-placeholder-1.avif' } = Astro.props
 </script>
 
 <!-- Google tag (gtag.js) -->
-<script type="text/partytown" async src='https://www.googletagmanager.com/gtag/js?id=G-ESWK4E6NZE'
+<script
+  type="text/partytown"
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-ESWK4E6NZE"
 ></script>
 <script type="text/partytown">
   window.dataLayer = window.dataLayer || []
@@ -63,27 +163,4 @@ const { title, description, image = '/blog-placeholder-1.avif' } = Astro.props
   gtag('js', new Date())
 
   gtag('config', 'G-ESWK4E6NZE')
-</script>
-
-<!-- JSON-LD -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org/",
-  '@type': 'WebApplication',
-  "name": 'Dev Daily Hub',
-  "description": 'Your go to place to learn the latest in the dev world',
-  "applicationCategory": 'Blog',
-  operatingSystem: 'Web',
-  featureList: [
-    'Technology Blog',
-    'Web Dev Blog',
-    'Dev Blog',
-    'Programming Blog',
-    'Engineer Blog',
-    'Software Developer Blog',
-    'Learn Programming',
-    'Learn Astro',
-    'Learn DevOps',
-    'Learn CI CD'
-  ],
-})}>
 </script>
