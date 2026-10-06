@@ -19,6 +19,10 @@ const startPage = Math.max(
 const endPage = Math.min(lastPage, startPage + maxDisplayedPages - 1)
 
 const computedBasePath = basePath ? basePath : '/page'
+
+// Page 1 of the main listing is the home page, so link there instead of the duplicate /page/1
+const pageHref = (pageNumber: number) =>
+  computedBasePath === '/page' && pageNumber === 1 ? '/' : `${computedBasePath}/${pageNumber}`
 ---
 
 <nav class="mt-8 flex items-center justify-center gap-x-1" aria-label="Pagination">
@@ -41,7 +45,7 @@ const computedBasePath = basePath ? basePath : '/page'
       return (
         <li class="block">
           <a
-            href={`${computedBasePath}/${pageNumber}`}
+            href={pageHref(pageNumber)}
             class={pageClass}
             aria-current={isActive ? 'page' : undefined}
           >

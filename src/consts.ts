@@ -7,24 +7,42 @@ export const SITE_TITLE = 'Dev Daily Hub'
 export const SITE_DESCRIPTION =
   'A place for devs with content written by devs. Writing guides, how-tos and keeping up to date with the latest and greatest in the dev world.'
 
+// SEO, src/components/BaseHead.astro
+export const SITE_LOCALE = 'en_GB'
+export const TWITTER_HANDLE = '@aidanl94'
+export const DEFAULT_OG_IMAGE = '/og/site.png'
+
+// Site owner, used for structured data and as the default post author
+export const SITE_OWNER = {
+  name: 'Aidan Lowson',
+  url: 'https://aidanlowson.com',
+}
+
+// Maps the `author` initials used in post frontmatter to a full author.
+// Any author not listed here is used as-is.
+export const AUTHORS: Record<string, { name: string; url?: string }> = {
+  VV: SITE_OWNER,
+  AL: SITE_OWNER,
+  A: SITE_OWNER,
+}
+
 // Tags Page Metadata, src/pages/tags/index.astro
-export const Tags_TITLE = 'Dev Daily Hub - All Tags'
-export const Tags_DESCRIPTION =
-  'Dev Daily Hub - All tags and the count of articles related to each tag'
+export const Tags_TITLE = 'All tags'
+export const Tags_DESCRIPTION = `Every topic covered on ${SITE_TITLE}, with the number of articles for each tag.`
 
 // Tags Page Metadata, src/pages/tags/[tag]/[page].astro
 export function getTagMetadata(tag: string) {
   return {
-    title: `All articles on '${tag}' tag in dev`,
-    description: `Explore articles about ${tag} for different perspectives and in-depth analysis.`,
+    title: `${tag} articles`,
+    description: `Guides, tutorials and write-ups about ${tag} from ${SITE_TITLE}.`,
   }
 }
 
 // Category Page Metadata, src/pages/category/[category]/[page].astro
 export function getCategoryMetadata(category: string) {
   return {
-    title: `All articles in '${category}' category in AstroVerse`,
-    description: `Browse all articles under the ${category} category in AstroVerse`,
+    title: `${category} articles`,
+    description: `Browse all ${category} articles on ${SITE_TITLE}: guides, tutorials and lessons learnt.`,
   }
 }
 
@@ -43,7 +61,7 @@ export const FooterLinks = [
 
 // Social Links, src/components/Footer.astro
 export const SocialLinks = [
-  // { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
+  { href: '/rss.xml', icon: 'tabler:rss', label: 'RSS' },
   {
     href: 'https://x.com/aidanl94',
     icon: 'tabler:brand-x',
@@ -82,7 +100,7 @@ export const SocialLinks = [
 ]
 
 // Search Page Metadata, src/pages/search.astro
-export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`
+export const SEARCH_PAGE_TITLE = 'Search'
 export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`
 export const domainName = 'devdailyhub.com'
 export const domainAlias = 'www.devdailyhub.com'

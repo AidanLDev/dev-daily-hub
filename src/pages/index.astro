@@ -17,6 +17,7 @@ const basePath = '/page'
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <h1 class="sr-only">{SITE_TITLE}: guides and tutorials for developers</h1>
   <div class="grid grid-cols-1">
     <div class="col-span-1 mb-4">
       {firstPagePosts.length > 0 && <HeroCard post={firstPagePosts[0]} />}
@@ -30,7 +31,7 @@ const basePath = '/page'
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {firstPagePosts.slice(3).map((post) => (
-        <Card post={post} imageClass="max-h-[198px]" />
+        <Card post={post} imageClass="max-h-[198px] w-auto" />
       ))}
     </div>
   </div>

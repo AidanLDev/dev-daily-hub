@@ -1,13 +1,51 @@
 ---
+import { join } from 'node:path'
 import { Image } from 'astro:assets'
+import sharp from 'sharp'
 
-const { src, alt, class: className = 'mx-auto w-full max-w-full rounded-lg' } = Astro.props
+interface Props {
+  src: string | ImageMetadata
+  alt: string
+  class?: string
+  /** The page's main image: load it straight away instead of lazily */
+  priority?: boolean
+}
+
+const {
+  src,
+  alt,
+  class: className = 'mx-auto w-full max-w-full rounded-lg',
+  priority = false,
+} = Astro.props
 
 const isImageMetadata = typeof src !== 'string'
+const loading = priority ? 'eager' : 'lazy'
+const fetchpriority = priority ? 'high' : 'auto'
+
+// Covers live in /public, so read their real size at build time. Width and
+// height let the browser reserve space before the image loads (no layout shift).
+let size: { width?: number; height?: number } = {}
+if (typeof src === 'string' && src.startsWith('/')) {
+  try {
+    const { width, height } = await sharp(join(process.cwd(), 'public', src)).metadata()
+    size = { width, height }
+  } catch {
+    // Missing or unreadable file: render without dimensions rather than failing the build
+  }
+}
 ---
 
 {isImageMetadata ? (
-  <Image src={src} alt={alt} class={className} />
+  <Image src={src} alt={alt} class={className} loading={loading} fetchpriority={fetchpriority} />
 ) : (
-  <img src={src} alt={alt} class={className} />
+  <img
+    src={src}
+    alt={alt}
+    class={className}
+    width={size.width}
+    height={size.height}
+    loading={loading}
+    decoding="async"
+    fetchpriority={fetchpriority}
+  />
 )}

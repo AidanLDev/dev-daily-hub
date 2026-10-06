@@ -45,7 +45,14 @@ export async function getStaticPaths() {
 const { page } = Astro.props
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<BaseLayout
+  title={page.currentPage === 1 ? SITE_TITLE : `Latest articles, page ${page.currentPage}`}
+  description={SITE_DESCRIPTION}
+  canonicalPath={page.currentPage === 1 ? '/' : undefined}
+>
+  <h1 class="sr-only">
+    {page.currentPage === 1 ? SITE_TITLE : `Latest articles, page ${page.currentPage}`}
+  </h1>
   {page.currentPage === 1 ? (
     <>
       <div class="mb-4 grid grid-cols-1">
@@ -58,14 +65,14 @@ const { page } = Astro.props
       </div>
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {page.data.slice(3).map((post) => (
-          <PostCard post={post} imageClass="max-h-[198px]" />
+          <PostCard post={post} imageClass="max-h-[198px] w-auto" />
         ))}
       </div>
     </>
   ) : (
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {page.data.map((post) => (
-        <PostCard post={post} imageClass="max-h-[198px]" />
+        <PostCard post={post} imageClass="max-h-[198px] w-auto" />
       ))}
     </div>
   )}
@@ -73,7 +80,9 @@ const { page } = Astro.props
   <Pagination
     currentPage={page.currentPage}
     lastPage={page.lastPage}
-    urlPrev={page.currentPage > 1 ? `/page/${page.currentPage - 1}` : null}
+    urlPrev={
+      page.currentPage > 2 ? `/page/${page.currentPage - 1}` : page.currentPage === 2 ? '/' : null
+    }
     urlNext={page.currentPage < page.lastPage ? `/page/${page.currentPage + 1}` : null}
     basePath="/page"
     maxDisplayedPages={5}

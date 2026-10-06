@@ -7,6 +7,8 @@ const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     pubDate: z.date(),
+    /** Set this when a post is meaningfully revised */
+    updatedDate: z.date().optional(),
     description: z.string(),
     lastModified: z.string().optional(),
     cover: z.string(),
